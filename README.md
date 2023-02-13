@@ -8,7 +8,7 @@ This example app provides a simple integration of the Trustly Lightbox iOS SDK i
 ```
 git clone git@github.com:TrustlyInc/trustly-ios-example.git
 ```
-- With Xcode running, open the **PayWithMyBankSDKDemoIOS.xcodeproj** file inside this repository
+- With Xcode running, open the **TrustlySDKDemoIOS.xcodeproj** file inside this repository
 - Download the latest version of the [PayWithMyBank iOS SDK](https://repo.paywithmybank.com/Specs/paywithmybank-ios-sdk/)
 - Extract the downloaded files in your local environment
 - From xCode:

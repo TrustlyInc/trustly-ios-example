@@ -16,14 +16,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		004E98D92585F61900B44317 /* PayWithMyBankSDKDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayWithMyBankSDKDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		004E98D92585F61900B44317 /* TrustlySDKDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustlySDKDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		004E98DC2585F61900B44317 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		004E98E02585F61900B44317 /* MerchantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantViewController.swift; sourceTree = "<group>"; };
 		004E98E32585F61900B44317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		004E98E52585F61A00B44317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004E98E82585F61A00B44317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004E98EA2585F61A00B44317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		004E99062586F0B000B44317 /* PayWithMyBankSDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayWithMyBankSDKDemoIOS.entitlements; sourceTree = "<group>"; };
+		004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrustlySDKDemoIOS.entitlements; sourceTree = "<group>"; };
 		159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlyLightboxViewController.swift; sourceTree = "<group>"; };
 		A53F01172999F154003D8999 /* PayWithMyBank.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PayWithMyBank.xcframework; path = ../../../Downloads/PayWithMyBank.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,7 +42,7 @@
 		004E98D02585F61900B44317 = {
 			isa = PBXGroup;
 			children = (
-				004E98DB2585F61900B44317 /* PayWithMyBankSDKDemoIOS */,
+				004E98DB2585F61900B44317 /* TrustlySDKDemoIOS */,
 				004E98DA2585F61900B44317 /* Products */,
 				004E99012586F09D00B44317 /* Frameworks */,
 			);
@@ -51,15 +51,15 @@
 		004E98DA2585F61900B44317 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				004E98D92585F61900B44317 /* PayWithMyBankSDKDemoIOS.app */,
+				004E98D92585F61900B44317 /* TrustlySDKDemoIOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		004E98DB2585F61900B44317 /* PayWithMyBankSDKDemoIOS */ = {
+		004E98DB2585F61900B44317 /* TrustlySDKDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
-				004E99062586F0B000B44317 /* PayWithMyBankSDKDemoIOS.entitlements */,
+				004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */,
 				004E98DC2585F61900B44317 /* AppDelegate.swift */,
 				004E98E02585F61900B44317 /* MerchantViewController.swift */,
 				004E98E22585F61900B44317 /* Main.storyboard */,
@@ -68,7 +68,7 @@
 				004E98EA2585F61A00B44317 /* Info.plist */,
 				159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */,
 			);
-			path = PayWithMyBankSDKDemoIOS;
+			path = TrustlySDKDemoIOS;
 			sourceTree = "<group>";
 		};
 		004E99012586F09D00B44317 /* Frameworks */ = {
@@ -82,9 +82,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		004E98D82585F61900B44317 /* PayWithMyBankSDKDemoIOS */ = {
+		004E98D82585F61900B44317 /* TrustlySDKDemoIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 004E98ED2585F61A00B44317 /* Build configuration list for PBXNativeTarget "PayWithMyBankSDKDemoIOS" */;
+			buildConfigurationList = 004E98ED2585F61A00B44317 /* Build configuration list for PBXNativeTarget "TrustlySDKDemoIOS" */;
 			buildPhases = (
 				004E98D52585F61900B44317 /* Sources */,
 				004E98D62585F61900B44317 /* Frameworks */,
@@ -94,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = PayWithMyBankSDKDemoIOS;
+			name = TrustlySDKDemoIOS;
 			productName = SwiftDemo;
-			productReference = 004E98D92585F61900B44317 /* PayWithMyBankSDKDemoIOS.app */;
+			productReference = 004E98D92585F61900B44317 /* TrustlySDKDemoIOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -113,7 +113,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 004E98D42585F61900B44317 /* Build configuration list for PBXProject "PayWithMyBankSDKDemoIOS" */;
+			buildConfigurationList = 004E98D42585F61900B44317 /* Build configuration list for PBXProject "TrustlySDKDemoIOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				004E98D82585F61900B44317 /* PayWithMyBankSDKDemoIOS */,
+				004E98D82585F61900B44317 /* TrustlySDKDemoIOS */,
 			);
 		};
 /* End PBXProject section */
@@ -300,16 +300,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PayWithMyBankSDKDemoIOS/PayWithMyBankSDKDemoIOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TrustlySDKDemoIOS/TrustlySDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QQ8ZHB7RDV;
-				INFOPLIST_FILE = PayWithMyBankSDKDemoIOS/Info.plist;
+				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.paywithmybank.ios.sdk.PayWithMyBankSDKDemoIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paywithmybank.ios.sdk.TrustlySDKDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -322,16 +322,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PayWithMyBankSDKDemoIOS/PayWithMyBankSDKDemoIOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TrustlySDKDemoIOS/TrustlySDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QQ8ZHB7RDV;
-				INFOPLIST_FILE = PayWithMyBankSDKDemoIOS/Info.plist;
+				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.paywithmybank.ios.sdk.PayWithMyBankSDKDemoIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paywithmybank.ios.sdk.TrustlySDKDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,7 +342,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		004E98D42585F61900B44317 /* Build configuration list for PBXProject "PayWithMyBankSDKDemoIOS" */ = {
+		004E98D42585F61900B44317 /* Build configuration list for PBXProject "TrustlySDKDemoIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				004E98EB2585F61A00B44317 /* Debug */,
@@ -351,7 +351,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		004E98ED2585F61A00B44317 /* Build configuration list for PBXNativeTarget "PayWithMyBankSDKDemoIOS" */ = {
+		004E98ED2585F61A00B44317 /* Build configuration list for PBXNativeTarget "TrustlySDKDemoIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				004E98EE2585F61A00B44317 /* Debug */,

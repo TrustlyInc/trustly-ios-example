@@ -1,6 +1,6 @@
 //
-//  PayWithMyBankViewController.swift
-//  PayWithMyBankSDKDemoIOS
+//  TrustlyLightboxViewController.swift
+//  TrustlySDKDemoIOS
 //
 //  Created by Marcos Rivereto on 13/01/23.
 //

@@ -24,30 +24,25 @@ class MerchantViewController: UIViewController {
     @IBOutlet weak var amountTextView: UITextField!
     var establishData:Dictionary<AnyHashable,Any> = [:]
     var payWithMyBankPanel = PayWithMyBankView()
+    var MERCHANT_ID = "YOUR_MERCHANT_ID"
+    var ACCESS_ID = "YOUR_ACCESS_ID"
+    var APP_DEEP_LINK = "demoapp://"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.establishData = ["accessId": "A48B73F694C4C8EE6307",
-                           "merchantId" : "1009542823",
-                           "description" : "Globex Demo",
-                           "merchantReference" : "3D51F3A42EFE499A",
-                           "amount": "0.00",
-                           "paymentType":"Retrieval",
-                           "customer.name":"Freddie Mercury",
-                           "customer.address.address1":"96725 Champlin Shoal",
-                           "customer.address.address2":"#86",
-                           "customer.address.city":"London",
-                           "customer.address.state":"London",
-                           "customer.address.zip":"DZ03 1WN",
-                           "customer.address.country":"US",
-                           "customer.phone":"+44 123456789",
-                           "customer.email":"freddie.mercury@email.com",
-                           "currency":"USD",
-                           "metadata.lang":"en_GB",
-                           "metadata.urlScheme": "demoapp://",
-                              "metadata.integrationContext": "InAppBrowser",
-                           "env":"sandbox"]
+        self.establishData = [
+            "accessId": ACCESS_ID,
+            "merchantId" : MERCHANT_ID,
+            "description" : "Globex Demo",
+            "merchantReference" : "unique_transaction_reference_001",
+            "amount": "0.00",
+            "paymentType":"Deferred",
+            "currency":"USD",
+            "metadata.urlScheme": APP_DEEP_LINK,
+            "metadata.integrationContext": "InAppBrowser",
+            "env":"sandbox"
+        ]
         
         self.payWithMyBankView.onChangeListener { (eventName, attributes) in
             if let event = eventName, let data = attributes {

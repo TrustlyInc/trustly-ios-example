@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		004E98E62585F61A00B44317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E52585F61A00B44317 /* Assets.xcassets */; };
 		004E98E92585F61A00B44317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E72585F61A00B44317 /* LaunchScreen.storyboard */; };
 		159587A82971DB1F000B1256 /* PayWithMyBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159587A72971DB1F000B1256 /* PayWithMyBankViewController.swift */; };
+		A53F01182999F154003D8999 /* PayWithMyBank.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F01172999F154003D8999 /* PayWithMyBank.xcframework */; };
+		A53F01192999F154003D8999 /* PayWithMyBank.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A53F01172999F154003D8999 /* PayWithMyBank.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,6 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A53F01192999F154003D8999 /* PayWithMyBank.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,6 +41,7 @@
 		004E98EA2585F61A00B44317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004E99062586F0B000B44317 /* PayWithMyBankSDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayWithMyBankSDKDemoIOS.entitlements; sourceTree = "<group>"; };
 		159587A72971DB1F000B1256 /* PayWithMyBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWithMyBankViewController.swift; sourceTree = "<group>"; };
+		A53F01172999F154003D8999 /* PayWithMyBank.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PayWithMyBank.xcframework; path = ../../../Downloads/PayWithMyBank.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53F01182999F154003D8999 /* PayWithMyBank.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +91,7 @@
 		004E99012586F09D00B44317 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A53F01172999F154003D8999 /* PayWithMyBank.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -315,7 +321,7 @@
 				CODE_SIGN_ENTITLEMENTS = PayWithMyBankSDKDemoIOS/PayWithMyBankSDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U468R7EQYR;
+				DEVELOPMENT_TEAM = QQ8ZHB7RDV;
 				INFOPLIST_FILE = PayWithMyBankSDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,7 +343,7 @@
 				CODE_SIGN_ENTITLEMENTS = PayWithMyBankSDKDemoIOS/PayWithMyBankSDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U468R7EQYR;
+				DEVELOPMENT_TEAM = QQ8ZHB7RDV;
 				INFOPLIST_FILE = PayWithMyBankSDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

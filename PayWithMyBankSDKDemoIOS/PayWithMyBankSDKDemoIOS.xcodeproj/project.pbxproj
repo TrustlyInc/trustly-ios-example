@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,23 +13,7 @@
 		004E98E62585F61A00B44317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E52585F61A00B44317 /* Assets.xcassets */; };
 		004E98E92585F61A00B44317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E72585F61A00B44317 /* LaunchScreen.storyboard */; };
 		159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */; };
-		A53F01182999F154003D8999 /* PayWithMyBank.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F01172999F154003D8999 /* PayWithMyBank.xcframework */; };
-		A53F01192999F154003D8999 /* PayWithMyBank.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A53F01172999F154003D8999 /* PayWithMyBank.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		159587B02971FB85000B1256 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A53F01192999F154003D8999 /* PayWithMyBank.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		004E98D92585F61900B44317 /* PayWithMyBankSDKDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayWithMyBankSDKDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A53F01182999F154003D8999 /* PayWithMyBank.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +89,6 @@
 				004E98D52585F61900B44317 /* Sources */,
 				004E98D62585F61900B44317 /* Frameworks */,
 				004E98D72585F61900B44317 /* Resources */,
-				159587B02971FB85000B1256 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -25,7 +25,6 @@
 		004E98EA2585F61A00B44317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrustlySDKDemoIOS.entitlements; sourceTree = "<group>"; };
 		159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlyLightboxViewController.swift; sourceTree = "<group>"; };
-		A53F01172999F154003D8999 /* PayWithMyBank.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PayWithMyBank.xcframework; path = ../../../Downloads/PayWithMyBank.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +73,6 @@
 		004E99012586F09D00B44317 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A53F01172999F154003D8999 /* PayWithMyBank.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

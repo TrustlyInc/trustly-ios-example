@@ -12,7 +12,7 @@
 		004E98E42585F61900B44317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E22585F61900B44317 /* Main.storyboard */; };
 		004E98E62585F61A00B44317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E52585F61A00B44317 /* Assets.xcassets */; };
 		004E98E92585F61A00B44317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E72585F61A00B44317 /* LaunchScreen.storyboard */; };
-		159587A82971DB1F000B1256 /* PayWithMyBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159587A72971DB1F000B1256 /* PayWithMyBankViewController.swift */; };
+		159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */; };
 		A53F01182999F154003D8999 /* PayWithMyBank.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53F01172999F154003D8999 /* PayWithMyBank.xcframework */; };
 		A53F01192999F154003D8999 /* PayWithMyBank.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A53F01172999F154003D8999 /* PayWithMyBank.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 		004E98E82585F61A00B44317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004E98EA2585F61A00B44317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004E99062586F0B000B44317 /* PayWithMyBankSDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PayWithMyBankSDKDemoIOS.entitlements; sourceTree = "<group>"; };
-		159587A72971DB1F000B1256 /* PayWithMyBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWithMyBankViewController.swift; sourceTree = "<group>"; };
+		159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlyLightboxViewController.swift; sourceTree = "<group>"; };
 		A53F01172999F154003D8999 /* PayWithMyBank.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PayWithMyBank.xcframework; path = ../../../Downloads/PayWithMyBank.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 				004E98E52585F61A00B44317 /* Assets.xcassets */,
 				004E98E72585F61A00B44317 /* LaunchScreen.storyboard */,
 				004E98EA2585F61A00B44317 /* Info.plist */,
-				159587A72971DB1F000B1256 /* PayWithMyBankViewController.swift */,
+				159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */,
 			);
 			path = PayWithMyBankSDKDemoIOS;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				159587A82971DB1F000B1256 /* PayWithMyBankViewController.swift in Sources */,
+				159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */,
 				004E98E12585F61900B44317 /* MerchantViewController.swift in Sources */,
 				004E98DD2585F61900B44317 /* AppDelegate.swift in Sources */,
 			);

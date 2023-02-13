@@ -67,29 +67,29 @@ class MerchantViewController: UIViewController {
     
     @IBAction func pay(_ sender: Any) {
         
-        let payWithMyBankViewController = PayWithMyBankViewController()
-        payWithMyBankViewController.delegate = self
+        let trustlyLightboxViewController = TrustlyLightboxViewController()
+        trustlyLightboxViewController.delegate = self
 
         if let amountText = amountTextView.text,
            let amount = Double(amountText) {
             
             establishData["amount"] = String(format: "%.2f", amount)
-            payWithMyBankViewController.establishData = establishData
+            trustlyLightboxViewController.establishData = establishData
             
-            self.present(payWithMyBankViewController, animated: true)
+            self.present(trustlyLightboxViewController, animated: true)
         }
         
     }
     
 }
 
-extension MerchantViewController: PayWithMyBankViewProtocol {
+extension MerchantViewController: TrustlyLightboxViewProtocol {
     
-    func onReturnWithTransactionId(transactionId: String, controller: PayWithMyBankViewController) {
+    func onReturnWithTransactionId(transactionId: String, controller: TrustlyLightboxViewController) {
         controller.dismiss(animated: true)
     }
     
-    func onCancelWithTransactionId(transactionId: String, controller: PayWithMyBankViewController) {
+    func onCancelWithTransactionId(transactionId: String, controller: TrustlyLightboxViewController) {
         controller.dismiss(animated: true)
     }
 

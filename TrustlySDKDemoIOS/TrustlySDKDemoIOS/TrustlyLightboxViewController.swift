@@ -1,6 +1,6 @@
 //
-//  PayWithMyBankViewController.swift
-//  PayWithMyBankSDKDemoIOS
+//  TrustlyLightboxViewController.swift
+//  TrustlySDKDemoIOS
 //
 //  Created by Marcos Rivereto on 13/01/23.
 //
@@ -8,23 +8,23 @@
 import UIKit
 import PayWithMyBank
 
-protocol PayWithMyBankViewProtocol {
-    func onReturnWithTransactionId(transactionId: String, controller: PayWithMyBankViewController)
-    func onCancelWithTransactionId(transactionId: String, controller: PayWithMyBankViewController)
+protocol TrustlyLightboxViewProtocol {
+    func onReturnWithTransactionId(transactionId: String, controller: TrustlyLightboxViewController)
+    func onCancelWithTransactionId(transactionId: String, controller: TrustlyLightboxViewController)
 }
 
 
-class PayWithMyBankViewController: UIViewController {
+class TrustlyLightboxViewController: UIViewController {
     
     var establishData:Dictionary<AnyHashable,Any>?
-    var delegate: PayWithMyBankViewProtocol?
+    var delegate: TrustlyLightboxViewProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let payWithMyBankPanel = PayWithMyBankView()
+        let trustlyLightboxPanel = PayWithMyBankView()
                 
-        self.view = payWithMyBankPanel.establish(self.establishData , onReturn: {(payWithMyBank, returnParameters)->Void in
+        self.view = trustlyLightboxPanel.establish(self.establishData , onReturn: {(payWithMyBank, returnParameters)->Void in
                 let response = returnParameters as! [String:String]
                 self.delegate?.onReturnWithTransactionId(transactionId: response["transactionId"]!, controller: self)
             

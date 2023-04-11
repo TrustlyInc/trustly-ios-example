@@ -4,10 +4,17 @@ This example app provides a simple integration of the Trustly Lightbox iOS SDK i
 
 ## Getting Started
 
-- Clone the project to your local environment
-```
+To use our SDK there are three differents ways:
+
+<details>
+<summary>Download and install manually</summary>
+<br />
+Clone the project to your local environment
+
+```sh
 git clone git@github.com:TrustlyInc/trustly-ios-example.git
-```
+````
+
 - With Xcode running, open the **TrustlySDKDemoIOS.xcodeproj** file inside this repository
 - Download the latest version of the [PayWithMyBank iOS SDK](https://repo.paywithmybank.com/Specs/paywithmybank-ios-sdk/)
 - Extract the downloaded files in your local environment
@@ -25,6 +32,37 @@ git clone git@github.com:TrustlyInc/trustly-ios-example.git
 
     6. If the framework appears in your project successfully, you are ready to build the app
     ![frameworkImported](resources/frameworkImported.png "frameworkImported")
+
+</details>
+
+<details>
+<summary>Cocoapods</summary>
+<br />
+
+TrustlySDK is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'TrustlySDK'
+```
+
+For development and test reasons, you can install the pod from a branch in github:
+```ruby
+pod 'TrustlySDK', :git => 'https://github.com/TrustlyInc/trustly-ios.git', :branch => '<BRANCH_NAME>'
+```
+</details>
+
+<details>
+<summary>Swift Package Manager - SPM</summary>
+<br />
+TrustlySDK is available through [Swift Package Manager](https://cocoapods.org). To install
+it, simply click on File -> Add packages -> Search or Enter Package URL, paste the github url about this package `https://github.com/TrustlyInc/trustly-ios.git`:
+
+![Add package url](resources/swift_package_manager.png)
+
+For production reason choose the `main` branch, but for test or validation choose the branch described in the [release version table](#versions).
+</details>
+<br />
 
 
 # Implementation Notes

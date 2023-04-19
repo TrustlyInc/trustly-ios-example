@@ -4,7 +4,14 @@ This example app provides a simple integration of the Trustly Lightbox iOS SDK i
 
 ## Getting Started
 
-To use our SDK there are three differents ways:
+- clone
+- open project
+- Install Trustly SDK - This can be done 3 ways
+    - Cocoapods
+    - Swift Package Manager
+    - Manually Download
+
+<br />
 
 <details>
 <summary>Download and install manually</summary>
@@ -46,7 +53,7 @@ it, simply add the following line to your Podfile:
 pod 'TrustlySDK'
 ```
 
-For development and test reasons, you can install the pod from a branch in github:
+In order to develop or test against an unreleased version of this SDK it is possible to install the pod from a branch of this repo:
 ```ruby
 pod 'TrustlySDK', :git => 'https://github.com/TrustlyInc/trustly-ios.git', :branch => '<BRANCH_NAME>'
 ```
@@ -55,12 +62,12 @@ pod 'TrustlySDK', :git => 'https://github.com/TrustlyInc/trustly-ios.git', :bran
 <details>
 <summary>Swift Package Manager - SPM</summary>
 <br />
-TrustlySDK is available through [Swift Package Manager](https://cocoapods.org). To install
-it, simply click on File -> Add packages -> Search or Enter Package URL, paste the github url about this package `https://github.com/TrustlyInc/trustly-ios.git`:
+
+TrustlySDK is available through [Swift Package Manager](https://www.swift.org/package-manager/). To install it from Xcode simply click on File -> Add packages -> Search or Enter Package URL, paste the github url about this package `https://github.com/TrustlyInc/trustly-ios.git`:
 
 ![Add package url](resources/swift_package_manager.png)
 
-For production reason choose the `main` branch, but for test or validation choose the branch described in the [release version table](#versions).
+For production choose the `main` branch, but in order to develop or test against an unreleased version of this SDK choose the branch listed in the [release version table](#versions).
 </details>
 <br />
 

@@ -16,8 +16,24 @@
 		156E71762A0EAE5600D782C1 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 156E71752A0EAE5600D782C1 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		156E71782A0EAE5600D782C1 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 156E71772A0EAE5600D782C1 /* FirebaseAppDistribution-Beta */; };
 		156E717A2A0EAE5600D782C1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 156E71792A0EAE5600D782C1 /* FirebaseCrashlytics */; };
+		156E717D2A0EB40D00D782C1 /* PayWithMyBank.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156E717B2A0EB40300D782C1 /* PayWithMyBank.xcframework */; };
+		156E717E2A0EB40D00D782C1 /* PayWithMyBank.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 156E717B2A0EB40300D782C1 /* PayWithMyBank.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		156E717F2A0EB40E00D782C1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				156E717E2A0EB40D00D782C1 /* PayWithMyBank.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		004E98D92585F61900B44317 /* TrustlySDKDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustlySDKDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +45,7 @@
 		004E98EA2585F61A00B44317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrustlySDKDemoIOS.entitlements; sourceTree = "<group>"; };
 		156E71722A0EA7E200D782C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		156E717B2A0EB40300D782C1 /* PayWithMyBank.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PayWithMyBank.xcframework; sourceTree = "<group>"; };
 		159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlyLightboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156E717D2A0EB40D00D782C1 /* PayWithMyBank.xcframework in Frameworks */,
 				156E717A2A0EAE5600D782C1 /* FirebaseCrashlytics in Frameworks */,
 				156E71762A0EAE5600D782C1 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				156E71782A0EAE5600D782C1 /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -66,6 +84,7 @@
 		004E98DB2585F61900B44317 /* TrustlySDKDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
+				156E717B2A0EB40300D782C1 /* PayWithMyBank.xcframework */,
 				156E71722A0EA7E200D782C1 /* GoogleService-Info.plist */,
 				004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */,
 				004E98DC2585F61900B44317 /* AppDelegate.swift */,
@@ -96,6 +115,7 @@
 				004E98D52585F61900B44317 /* Sources */,
 				004E98D62585F61900B44317 /* Frameworks */,
 				004E98D72585F61900B44317 /* Resources */,
+				156E717F2A0EB40E00D782C1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,6 +339,7 @@
 				CODE_SIGN_ENTITLEMENTS = TrustlySDKDemoIOS/TrustlySDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 935WTYE9VM;
 				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

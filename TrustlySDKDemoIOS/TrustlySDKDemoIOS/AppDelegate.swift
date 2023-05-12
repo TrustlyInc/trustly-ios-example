@@ -17,6 +17,7 @@
 
 import UIKit
 import PayWithMyBank
+import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

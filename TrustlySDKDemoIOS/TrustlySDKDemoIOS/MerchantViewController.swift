@@ -17,19 +17,25 @@
 
 import UIKit
 import PayWithMyBank
+import FirebaseCrashlytics
 
 class MerchantViewController: UIViewController {
+    
+    lazy var crashlytics = Crashlytics.crashlytics()
 
     @IBOutlet weak var payWithMyBankView: PayWithMyBankView!
     @IBOutlet weak var amountTextView: UITextField!
     var establishData:Dictionary<AnyHashable,Any> = [:]
     var payWithMyBankPanel = PayWithMyBankView()
-    var MERCHANT_ID = "YOUR_MERCHANT_ID"
-    var ACCESS_ID = "YOUR_ACCESS_ID"
+    var MERCHANT_ID = "1009542823"
+    var ACCESS_ID = "A48B73F694C4C8EE6307"
     var APP_DEEP_LINK = "demoapp://"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Crashlytics.crashlytics().log("View loaded")
+        
         
         self.establishData = [
             "accessId": ACCESS_ID,
@@ -39,6 +45,8 @@ class MerchantViewController: UIViewController {
             "amount": "0.00",
             "paymentType":"Deferred",
             "currency":"USD",
+            "customer.name": "John",
+            "customer.address.country": "US",
             "metadata.urlScheme": APP_DEEP_LINK,
             "metadata.integrationContext": "InAppBrowser",
             "env":"sandbox"
@@ -66,7 +74,7 @@ class MerchantViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func pay(_ sender: Any) {
-        
+
         let trustlyLightboxViewController = TrustlyLightboxViewController()
         trustlyLightboxViewController.delegate = self
 

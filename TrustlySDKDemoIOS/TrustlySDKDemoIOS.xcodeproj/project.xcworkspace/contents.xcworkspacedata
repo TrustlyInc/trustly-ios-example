@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/marcos.rivereto/paywithmybank/source/trustly-ios-example/PayWithMyBankSDKDemoIOS/TrustlySDKDemoIOS.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -339,6 +339,7 @@
 				CODE_SIGN_ENTITLEMENTS = TrustlySDKDemoIOS/TrustlySDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 935WTYE9VM;
 				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
@@ -346,6 +347,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.paywithmybank.ios.sdk.TrustlySDKDemoIOS.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -362,12 +364,14 @@
 				CODE_SIGN_ENTITLEMENTS = TrustlySDKDemoIOS/TrustlySDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 935WTYE9VM;
 				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.paywithmybank.ios.sdk.TrustlySDKDemoIOS.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;

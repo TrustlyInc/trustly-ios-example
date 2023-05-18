@@ -1,0 +1,36 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PayWithMyBank
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AuthenticationServices
+@_exported import PayWithMyBank
+import SafariServices
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(PayWithMyBankView) @_Concurrency.MainActor(unsafe) public class PayWithMyBankView : UIKit.UIView, PayWithMyBank.PayWithMyBankProtocol, WebKit.WKNavigationDelegate, WebKit.WKScriptMessageHandler, WebKit.WKUIDelegate {
+  @_Concurrency.MainActor(unsafe) public var navBarColor: UIKit.UIColor!
+  @_Concurrency.MainActor(unsafe) public var navBarButtonColor: UIKit.UIColor!
+  @_Concurrency.MainActor(unsafe) public var navBarTitleColor: UIKit.UIColor!
+  @_Concurrency.MainActor(unsafe) public var navBarSubtitleColor: UIKit.UIColor!
+  @_Concurrency.MainActor(unsafe) @objc public func selectBankWidget(_ eD: [Swift.AnyHashable : Any]!, onBankSelected: PayWithMyBank.PayWithMyBankCallback!) -> UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) @objc public func establish(_ eD: [Swift.AnyHashable : Any]!, onReturn: PayWithMyBank.PayWithMyBankCallback!, onCancel: PayWithMyBank.PayWithMyBankCallback!) -> UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) @objc public func hybrid(_ address: Swift.String!, returnUrl: Swift.String!, onReturn: PayWithMyBank.PayWithMyBankCallback!, cancelUrl: Swift.String!, onCancel: PayWithMyBank.PayWithMyBankCallback!) -> UIKit.UIView!
+  @_Concurrency.MainActor(unsafe) @objc public func verify(_ verifyData: [Swift.AnyHashable : Any]!, onReturn: PayWithMyBank.PayWithMyBankCallback!, onCancel: PayWithMyBank.PayWithMyBankCallback!) -> UIKit.UIView
+  @_Concurrency.MainActor(unsafe) @objc public func onExternalUrl(_ onExternalUrl: @escaping PayWithMyBank.PayWithMyBankCallback)
+  @_Concurrency.MainActor(unsafe) @objc public func onChangeListener(_ onChangeListener: @escaping PayWithMyBank.PayWithMyBankListenerCallback)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, createWebViewWith configuration: WebKit.WKWebViewConfiguration, for navigationAction: WebKit.WKNavigationAction, windowFeatures: WebKit.WKWindowFeatures) -> WebKit.WKWebView?
+  @_Concurrency.MainActor(unsafe) @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) public func webView(webView: WebKit.WKWebView!, didFailNavigation error: Foundation.NSError!)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @objc deinit
+}
+extension PayWithMyBank.PayWithMyBankView : AuthenticationServices.ASWebAuthenticationPresentationContextProviding {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationAnchor(for session: AuthenticationServices.ASWebAuthenticationSession) -> AuthenticationServices.ASPresentationAnchor
+}
+extension PayWithMyBank.PayWithMyBankView {
+  @_Concurrency.MainActor(unsafe) public static let trustlyCloseWebview: Swift.String
+}

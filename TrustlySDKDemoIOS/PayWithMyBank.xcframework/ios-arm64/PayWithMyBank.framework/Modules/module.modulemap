@@ -1,0 +1,11 @@
+framework module PayWithMyBank {
+  umbrella header "PayWithMyBank.h"
+
+  export *
+  module * { export * }
+}
+
+module PayWithMyBank.Swift {
+  header "PayWithMyBank-Swift.h"
+  requires objc
+}

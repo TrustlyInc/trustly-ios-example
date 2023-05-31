@@ -104,7 +104,6 @@
 				004E98D52585F61900B44317 /* Sources */,
 				004E98D62585F61900B44317 /* Frameworks */,
 				004E98D72585F61900B44317 /* Resources */,
-				5EF2ECE531B440C450652842 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,23 +160,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5EF2ECE531B440C450652842 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TrustlySDKDemoIOS/Pods-TrustlySDKDemoIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TrustlySDKDemoIOS/Pods-TrustlySDKDemoIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrustlySDKDemoIOS/Pods-TrustlySDKDemoIOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F9EA658510B73D783E9D5A78 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

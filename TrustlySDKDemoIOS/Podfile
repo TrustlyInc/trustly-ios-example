@@ -6,6 +6,5 @@ target 'TrustlySDKDemoIOS' do
   use_frameworks!
 
   # Pods for TrustlySDKDemoIOS
-  pod 'TrustlySDK', :git => 'https://github.com/TrustlyInc/trustly-ios.git', :branch => 'DEV-140990-available-from-swp'
 
 end

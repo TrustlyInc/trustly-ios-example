@@ -16,14 +16,13 @@
 */
 
 import UIKit
-import PayWithMyBank
+import TrustlySDK
 
 class MerchantViewController: UIViewController {
 
-    @IBOutlet weak var payWithMyBankView: PayWithMyBankView!
+    @IBOutlet weak var trustlyBankView: TrustlyView!
     @IBOutlet weak var amountTextView: UITextField!
     var establishData:Dictionary<AnyHashable,Any> = [:]
-    var payWithMyBankPanel = PayWithMyBankView()
     var MERCHANT_ID = "YOUR_MERCHANT_ID"
     var ACCESS_ID = "YOUR_ACCESS_ID"
     var APP_DEEP_LINK = "demoapp://"
@@ -31,30 +30,42 @@ class MerchantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.establishData = [
-            "accessId": ACCESS_ID,
-            "merchantId" : MERCHANT_ID,
-            "description" : "Globex Demo",
-            "merchantReference" : "unique_transaction_reference_001",
-            "amount": "0.00",
-            "paymentType":"Deferred",
-            "currency":"USD",
-            "metadata.urlScheme": APP_DEEP_LINK,
-            "metadata.integrationContext": "InAppBrowser",
-            "env":"sandbox"
-        ]
+//        self.establishData = [
+//            "accessId": ACCESS_ID,
+//            "merchantId" : MERCHANT_ID,
+//            "description" : "Globex Demo",
+//            "merchantReference" : "unique_transaction_reference_001",
+//            "amount": "0.00",
+//            "paymentType":"Deferred",
+//            "currency":"USD",
+//            "metadata.urlScheme": APP_DEEP_LINK,
+//            "metadata.integrationContext": "InAppBrowser",
+//            "env":"sandbox"
+//        ]
         
-        self.payWithMyBankView.onChangeListener { (eventName, attributes) in
-            if let event = eventName, let data = attributes {
-                print("onChangeListener: \(event) \(data)")
-            }
+        self.establishData = ["accessId": "A48B73F694C4C8EE6307",
+                              "merchantId" : "1009542823",
+                              "currency" : "USD",
+                              "amount" : "1.00",
+                              "merchantReference" : "3D51F3A42EFE499A",
+                              "paymentType" : "Retrieval",
+                              "returnUrl": "/returnUrl",
+                              "cancelUrl": "/cancelUrl",
+                              "requestSignature": "HT5mVOqBXa8ZlvgX2USmPeLns5o=",
+                              "customer.name": "John",
+                              "customer.address.country": "US",
+                              "metadata.urlScheme": "demoapp://",
+                              "description": "Globex Demo",
+                              "env": "sandbox",
+                              "localUrl": "192.168.0.13:8000"]
+        
+        self.trustlyBankView.onChangeListener { (eventName, attributes) in
+            print("onChangeListener: \(eventName) \(attributes)")
         }
 
-        self.payWithMyBankView.selectBankWidget(establishData) { (view, data) in
-            if let data = data {
-                print("returnParameters:\(data)")
-                self.establishData = data
-            }
+        self.trustlyBankView.selectBankWidget(establishData: establishData) { (view, data) in
+            print("returnParameters:\(data)")
+            self.establishData = data
         }
 
     }

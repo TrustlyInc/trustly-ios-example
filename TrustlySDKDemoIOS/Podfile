@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TrustlySDKDemoIOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TrustlySDKDemoIOS
+  pod 'TrustlySDK', :git => 'https://github.com/TrustlyInc/trustly-ios.git', :branch => 'DEV-140990-available-from-swp'
+
+end

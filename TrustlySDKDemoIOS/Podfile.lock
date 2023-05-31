@@ -1,0 +1,22 @@
+PODS:
+  - TrustlySDK (3.0.0)
+
+DEPENDENCIES:
+  - TrustlySDK (from `https://github.com/TrustlyInc/trustly-ios.git`, branch `DEV-140990-available-from-swp`)
+
+EXTERNAL SOURCES:
+  TrustlySDK:
+    :branch: DEV-140990-available-from-swp
+    :git: https://github.com/TrustlyInc/trustly-ios.git
+
+CHECKOUT OPTIONS:
+  TrustlySDK:
+    :commit: 44e93cd439245cfd8e028dc49e61f1999a46f7cc
+    :git: https://github.com/TrustlyInc/trustly-ios.git
+
+SPEC CHECKSUMS:
+  TrustlySDK: 9c710da3104f2b7c3e25b061c0693895190ab293
+
+PODFILE CHECKSUM: 2a78dac36d0a00de4d1b555c49430a504ad8acd5
+
+COCOAPODS: 1.12.0

@@ -16,7 +16,7 @@
 */
 
 import UIKit
-import PayWithMyBank
+import TrustlySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -66,6 +66,6 @@ extension AppDelegate {
 }
 
 extension Notification.Name{
-    static let trustlyCloseWebview = Notification.Name(PayWithMyBankView.trustlyCloseWebview)
+    static let trustlyCloseWebview = Notification.Name(TrustlyView.trustlyCloseWebview)
 
 }

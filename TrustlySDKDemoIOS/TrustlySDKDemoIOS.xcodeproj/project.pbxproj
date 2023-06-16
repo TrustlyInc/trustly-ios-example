@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150F7BFE2A3CEB4D003AD5B0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7BFD2A3CEB4D003AD5B0 /* ColorExtension.swift */; };
 		154925C52A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */; };
 		154925C72A37BC4B00D39D9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925C62A37BC4B00D39D9B /* ContentView.swift */; };
 		154925C92A37BC4C00D39D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154925C82A37BC4C00D39D9B /* Assets.xcassets */; };
@@ -14,6 +15,11 @@
 		154925D62A37BC4C00D39D9B /* TrustlySDKDemoIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925D52A37BC4C00D39D9B /* TrustlySDKDemoIOSTests.swift */; };
 		154925E02A37BC4D00D39D9B /* TrustlySDKDemoIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925DF2A37BC4D00D39D9B /* TrustlySDKDemoIOSUITests.swift */; };
 		154925E22A37BC4D00D39D9B /* TrustlySDKDemoIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925E12A37BC4D00D39D9B /* TrustlySDKDemoIOSUITestsLaunchTests.swift */; };
+		15A2A36D2A3B54AF007F22A4 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2A36C2A3B54AF007F22A4 /* CartView.swift */; };
+		15A2A36F2A3B5851007F22A4 /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2A36E2A3B5851007F22A4 /* ProductCellView.swift */; };
+		15A2A3722A3B5902007F22A4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2A3712A3B5902007F22A4 /* Product.swift */; };
+		15A2A3742A3CA3D6007F22A4 /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2A3732A3CA3D6007F22A4 /* ProductsListView.swift */; };
+		15A2A3772A3CB5B6007F22A4 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2A3762A3CB5B6007F22A4 /* DoubleExtensions.swift */; };
 		15F860EA58CA9CDB60EBEEE4 /* Pods_TrustlySDKDemoIOS_TrustlySDKDemoIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF62CD721F1642667F55863A /* Pods_TrustlySDKDemoIOS_TrustlySDKDemoIOSUITests.framework */; };
 		C186139CE73F54E94A5F9FBB /* Pods_TrustlySDKDemoIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111529663D46A6DF3F177681 /* Pods_TrustlySDKDemoIOSTests.framework */; };
 		DB8094C3516C575F33265175 /* Pods_TrustlySDKDemoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB4C75D34A507C4EE274E71 /* Pods_TrustlySDKDemoIOS.framework */; };
@@ -39,6 +45,7 @@
 /* Begin PBXFileReference section */
 		03A6EFD198B10EB6CC21AD0C /* Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.release.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		111529663D46A6DF3F177681 /* Pods_TrustlySDKDemoIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrustlySDKDemoIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		150F7BFD2A3CEB4D003AD5B0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		154925C12A37BC4B00D39D9B /* TrustlySDKDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustlySDKDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlySDKDemoIOSApp.swift; sourceTree = "<group>"; };
 		154925C62A37BC4B00D39D9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +56,11 @@
 		154925DB2A37BC4D00D39D9B /* TrustlySDKDemoIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrustlySDKDemoIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		154925DF2A37BC4D00D39D9B /* TrustlySDKDemoIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlySDKDemoIOSUITests.swift; sourceTree = "<group>"; };
 		154925E12A37BC4D00D39D9B /* TrustlySDKDemoIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlySDKDemoIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		15A2A36C2A3B54AF007F22A4 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		15A2A36E2A3B5851007F22A4 /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
+		15A2A3712A3B5902007F22A4 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		15A2A3732A3CA3D6007F22A4 /* ProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListView.swift; sourceTree = "<group>"; };
+		15A2A3762A3CB5B6007F22A4 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		641713521AD660F1D917E1B5 /* Pods-TrustlySDKDemoIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOSTests/Pods-TrustlySDKDemoIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C9C7D3B4B19AED904C3E306 /* Pods-TrustlySDKDemoIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOS.debug.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOS/Pods-TrustlySDKDemoIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AE26770D126CC1294958BA45 /* Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +123,9 @@
 		154925C32A37BC4B00D39D9B /* TrustlySDKDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
+				15A2A3752A3CB59C007F22A4 /* Extensions */,
+				15A2A3702A3B58D6007F22A4 /* Models */,
+				15A2A36B2A3B5498007F22A4 /* Views */,
 				154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */,
 				154925C62A37BC4B00D39D9B /* ContentView.swift */,
 				154925C82A37BC4C00D39D9B /* Assets.xcassets */,
@@ -144,6 +159,33 @@
 			path = TrustlySDKDemoIOSUITests;
 			sourceTree = "<group>";
 		};
+		15A2A36B2A3B5498007F22A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15A2A36C2A3B54AF007F22A4 /* CartView.swift */,
+				15A2A36E2A3B5851007F22A4 /* ProductCellView.swift */,
+				15A2A3732A3CA3D6007F22A4 /* ProductsListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		15A2A3702A3B58D6007F22A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15A2A3712A3B5902007F22A4 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		15A2A3752A3CB59C007F22A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15A2A3762A3CB5B6007F22A4 /* DoubleExtensions.swift */,
+				150F7BFD2A3CEB4D003AD5B0 /* ColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5BFD838DADACA7FC6CD3879B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +206,6 @@
 				641713521AD660F1D917E1B5 /* Pods-TrustlySDKDemoIOSTests.debug.xcconfig */,
 				C1FD83CC40C18E2A7696F73C /* Pods-TrustlySDKDemoIOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -370,6 +411,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A2A36F2A3B5851007F22A4 /* ProductCellView.swift in Sources */,
+				15A2A36D2A3B54AF007F22A4 /* CartView.swift in Sources */,
+				15A2A3742A3CA3D6007F22A4 /* ProductsListView.swift in Sources */,
+				150F7BFE2A3CEB4D003AD5B0 /* ColorExtension.swift in Sources */,
+				15A2A3772A3CB5B6007F22A4 /* DoubleExtensions.swift in Sources */,
+				15A2A3722A3B5902007F22A4 /* Product.swift in Sources */,
 				154925C72A37BC4B00D39D9B /* ContentView.swift in Sources */,
 				154925C52A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift in Sources */,
 			);

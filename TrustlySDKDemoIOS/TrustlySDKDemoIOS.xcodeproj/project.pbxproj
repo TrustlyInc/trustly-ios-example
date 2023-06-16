@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		150F7BFE2A3CEB4D003AD5B0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7BFD2A3CEB4D003AD5B0 /* ColorExtension.swift */; };
+		150F7C022A3CF5F0003AD5B0 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7C012A3CF5F0003AD5B0 /* CheckoutView.swift */; };
+		150F7C042A3CFA6A003AD5B0 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7C032A3CFA6A003AD5B0 /* FooterView.swift */; };
+		150F7C062A3CFADD003AD5B0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7C052A3CFADD003AD5B0 /* HeaderView.swift */; };
 		154925C52A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */; };
 		154925C92A37BC4C00D39D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154925C82A37BC4C00D39D9B /* Assets.xcassets */; };
 		154925CC2A37BC4C00D39D9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154925CB2A37BC4C00D39D9B /* Preview Assets.xcassets */; };
@@ -45,6 +48,9 @@
 		03A6EFD198B10EB6CC21AD0C /* Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.release.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		111529663D46A6DF3F177681 /* Pods_TrustlySDKDemoIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrustlySDKDemoIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		150F7BFD2A3CEB4D003AD5B0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		150F7C012A3CF5F0003AD5B0 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		150F7C032A3CFA6A003AD5B0 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		150F7C052A3CFADD003AD5B0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		154925C12A37BC4B00D39D9B /* TrustlySDKDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustlySDKDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlySDKDemoIOSApp.swift; sourceTree = "<group>"; };
 		154925C82A37BC4C00D39D9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +168,9 @@
 				15A2A36C2A3B54AF007F22A4 /* CartView.swift */,
 				15A2A36E2A3B5851007F22A4 /* ProductCellView.swift */,
 				15A2A3732A3CA3D6007F22A4 /* ProductsListView.swift */,
+				150F7C012A3CF5F0003AD5B0 /* CheckoutView.swift */,
+				150F7C032A3CFA6A003AD5B0 /* FooterView.swift */,
+				150F7C052A3CFADD003AD5B0 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,9 +420,12 @@
 				15A2A36F2A3B5851007F22A4 /* ProductCellView.swift in Sources */,
 				15A2A36D2A3B54AF007F22A4 /* CartView.swift in Sources */,
 				15A2A3742A3CA3D6007F22A4 /* ProductsListView.swift in Sources */,
+				150F7C042A3CFA6A003AD5B0 /* FooterView.swift in Sources */,
 				150F7BFE2A3CEB4D003AD5B0 /* ColorExtension.swift in Sources */,
+				150F7C062A3CFADD003AD5B0 /* HeaderView.swift in Sources */,
 				15A2A3772A3CB5B6007F22A4 /* DoubleExtensions.swift in Sources */,
 				15A2A3722A3B5902007F22A4 /* Product.swift in Sources */,
+				150F7C022A3CF5F0003AD5B0 /* CheckoutView.swift in Sources */,
 				154925C52A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

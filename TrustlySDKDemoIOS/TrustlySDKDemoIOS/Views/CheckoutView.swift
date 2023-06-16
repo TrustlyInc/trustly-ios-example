@@ -1,13 +1,13 @@
 //
-//  CartView.swift
+//  CheckoutView.swift
 //  TrustlySDKDemoIOS
 //
-//  Created by Marcos Rivereto on 15/06/23.
+//  Created by Marcos Rivereto on 16/06/23.
 //
 
 import SwiftUI
 
-struct CartView: View {
+struct CheckoutView: View {
     let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
                     Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
                     Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
@@ -22,25 +22,26 @@ struct CartView: View {
         
         NavigationView{
             VStack(alignment: .leading){
-                HeaderView(title: "Shopping cart", imageName: "logo")
-            
+                HeaderView(title: "Checkout", imageName: "logo")
                 List(products){ product in
                     ProductCellView(product: product).listRowSeparator(.hidden)
                     Divider()
                 }.listStyle(.plain)
                     
-
                 Divider()
-                HStack{
-                    Text("Subtotal:")
-                    Spacer()
-                    Text("$90.00")
-                }.padding()
+                Text("Payment method")
+                    .font(.custom("Open Sans", size: 16.0))
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.ui.subTitle)
+                    .padding()
+                
+                Divider()
+                FooterView()
                 
                 Button {
                     print("Checkout")
                 } label: {
-                    Text("Checkout")
+                    Text("Place order")
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color.ui.checkoutButton)
@@ -56,8 +57,8 @@ struct CartView: View {
     }
 }
 
-struct CartView_Previews: PreviewProvider {
+struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CartView()
+        CheckoutView()
     }
 }

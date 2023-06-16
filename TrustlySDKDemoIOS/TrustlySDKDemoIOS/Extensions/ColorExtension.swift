@@ -14,6 +14,7 @@ extension Color {
         let checkoutButton = Color("CheckoutButton")
         let checkoutSubtotal = Color("CheckoutSubtotal")
         let mainTitle = Color("MainTitle")
+        let subTitle = Color("SubTitle")
         let productDescription = Color("ProductDescription")
         let productPrice = Color("ProductPrice")
         let productQuantity = Color("ProductQuantity")

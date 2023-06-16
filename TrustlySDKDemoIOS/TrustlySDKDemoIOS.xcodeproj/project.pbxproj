@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		150F7BFE2A3CEB4D003AD5B0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150F7BFD2A3CEB4D003AD5B0 /* ColorExtension.swift */; };
 		154925C52A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */; };
-		154925C72A37BC4B00D39D9B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925C62A37BC4B00D39D9B /* ContentView.swift */; };
 		154925C92A37BC4C00D39D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154925C82A37BC4C00D39D9B /* Assets.xcassets */; };
 		154925CC2A37BC4C00D39D9B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154925CB2A37BC4C00D39D9B /* Preview Assets.xcassets */; };
 		154925D62A37BC4C00D39D9B /* TrustlySDKDemoIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154925D52A37BC4C00D39D9B /* TrustlySDKDemoIOSTests.swift */; };
@@ -48,7 +47,6 @@
 		150F7BFD2A3CEB4D003AD5B0 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		154925C12A37BC4B00D39D9B /* TrustlySDKDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustlySDKDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlySDKDemoIOSApp.swift; sourceTree = "<group>"; };
-		154925C62A37BC4B00D39D9B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		154925C82A37BC4C00D39D9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		154925CB2A37BC4C00D39D9B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		154925D12A37BC4C00D39D9B /* TrustlySDKDemoIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrustlySDKDemoIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +125,6 @@
 				15A2A3702A3B58D6007F22A4 /* Models */,
 				15A2A36B2A3B5498007F22A4 /* Views */,
 				154925C42A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift */,
-				154925C62A37BC4B00D39D9B /* ContentView.swift */,
 				154925C82A37BC4C00D39D9B /* Assets.xcassets */,
 				154925CA2A37BC4C00D39D9B /* Preview Content */,
 			);
@@ -417,7 +414,6 @@
 				150F7BFE2A3CEB4D003AD5B0 /* ColorExtension.swift in Sources */,
 				15A2A3772A3CB5B6007F22A4 /* DoubleExtensions.swift in Sources */,
 				15A2A3722A3B5902007F22A4 /* Product.swift in Sources */,
-				154925C72A37BC4B00D39D9B /* ContentView.swift in Sources */,
 				154925C52A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

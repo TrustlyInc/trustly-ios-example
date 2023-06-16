@@ -23,10 +23,15 @@ struct CartView: View {
         NavigationView{
             VStack(alignment: .leading){
                 Image("logo").padding()
-                Text("Shopping cart").padding()
+                Text("Shopping cart")
+                    .font(.custom("Open Sans", size: 28.0))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.ui.mainTitle)
+                    .padding()
             
                 List(products){ product in
                     ProductCellView(product: product).listRowSeparator(.hidden)
+                    Divider()
                 }.listStyle(.plain)
                     
 

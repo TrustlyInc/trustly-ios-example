@@ -7,16 +7,9 @@
 
 import SwiftUI
 
-struct CartView: View {
-    let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]
-
+struct CartView<ViewModel>: View where ViewModel: CartViewModel {
+    
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         
@@ -24,8 +17,8 @@ struct CartView: View {
             VStack(alignment: .leading){
                 HeaderView(title: "Shopping cart", imageName: "logo")
             
-                List(products){ product in
-                    ProductCellView(product: product).listRowSeparator(.hidden)
+                List(viewModel.products){ product in
+                    product
                     Divider()
                 }.listStyle(.plain)
                     
@@ -37,10 +30,10 @@ struct CartView: View {
                     Text("$90.00")
                 }.padding()
                 
-                Button {
-                    print("Checkout")
+                NavigationLink{
+//                    CartView().toolbarRole(.editor)
                 } label: {
-                    Text("Checkout")
+                    Text("Go to checkout")
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color.ui.checkoutButton)
@@ -48,6 +41,7 @@ struct CartView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                         .padding()
+
                 }
             }
         }.navigationBarTitle("Purchase sneakers")
@@ -58,6 +52,7 @@ struct CartView: View {
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        CartView()
+        let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]
+        CartView(viewModel: CartViewModel(selectedProducts: products))
     }
 }

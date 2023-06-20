@@ -30,7 +30,7 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductListViewModelPr
                 NavigationLink{
                     CartView().toolbarRole(.editor)
                 } label: {
-                    Text("Go to checkout")
+                    Text("Go to cart")
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color.ui.checkoutButton)

@@ -10,25 +10,21 @@ import SwiftUI
 struct ProductsListView<ViewModel>: View where ViewModel: ProductListViewModelProtocol {
     
     @ObservedObject var viewModel: ViewModel
-    
+    let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
                 Image("logo").padding()
                 
                 List(viewModel.products) { product in
-                    NavigationLink {
-                        CartView().toolbarRole(.editor)
-                    } label: {
-                        product
-                    }.listRowSeparator(.hidden)
+                        product.listRowSeparator(.hidden)
                     
                     Divider()
                 }
                 .listStyle(.plain)
                 
                 NavigationLink{
-                    CartView().toolbarRole(.editor)
+                    CartView(viewModel: CartViewModel(selectedProducts: products)).toolbarRole(.editor)
                 } label: {
                     Text("Go to cart")
                         .padding()

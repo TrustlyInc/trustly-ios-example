@@ -7,48 +7,51 @@
 
 import SwiftUI
 
-struct ProductsListView: View {
-    let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]
-
+struct ProductsListView<ViewModel>: View where ViewModel: ProductListViewModelProtocol {
+    
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
                 Image("logo").padding()
-                List(products) { product in
+                
+                List(viewModel.products) { product in
                     NavigationLink {
                         CartView().toolbarRole(.editor)
                     } label: {
-                        ProductCellView(product: product)
+                        product
                     }.listRowSeparator(.hidden)
                     
                     Divider()
                 }
                 .listStyle(.plain)
+                
+                NavigationLink{
+                    CartView().toolbarRole(.editor)
+                } label: {
+                    Text("Go to checkout")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.ui.checkoutButton)
+                        .border(Color.ui.checkoutButton)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding()
+
+                }
+
             }.navigationBarTitle("Purchase sneakers")
                 .navigationBarTitleDisplayMode(.inline)
+                
+        }.onAppear{
+            viewModel.fetchProductsCells()
         }
     }
 }
 
 struct ProductsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsListView()
+        ProductsListView(viewModel: ProductListViewModel())
     }
 }

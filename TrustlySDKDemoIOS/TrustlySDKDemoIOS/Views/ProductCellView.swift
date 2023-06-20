@@ -7,34 +7,39 @@
 
 import SwiftUI
 
-struct ProductCellView: View {
+struct ProductCellView: View, Identifiable {
+    var id = UUID()
     
-    let product: Product
+    let image: String
+    let title: String
+    let description: String
+    let quantity: Int
+    let price: Double
 
     var body: some View {
         HStack(alignment: .top){
-            Image(product.image)
+            Image(image)
                 .resizable()
                 .frame(width: 100, height: 100)
             
             VStack(alignment: .leading){
-                Text(product.title)
+                Text(title)
                     .font(.custom("Open Sans", size: 16.0))
                     .fontWeight(.semibold)
                     .foregroundColor(Color.ui.productTitle)
 
                 Spacer()
-                Text(product.description)
+                Text(description)
                     .font(.custom("Open Sans", size: 16.0))
                     .fontWeight(.regular)
                     .foregroundColor(Color.ui.productDescription)
                 HStack{
-                    Text("Qty \(product.quantity)")
+                    Text("Qty \(quantity)")
                         .font(.custom("Open Sans", size: 16.0))
                         .fontWeight(.regular)
                         .foregroundColor(Color.ui.productQuantity)
                     Spacer()
-                    Text(product.price.toCurrencyFormat())
+                    Text(price.toCurrencyFormat())
                         .font(.custom("Open Sans", size: 16.0))
                         .fontWeight(.semibold)
                         .foregroundColor(Color.ui.productPrice)
@@ -49,7 +54,7 @@ struct ProductCellView: View {
 
 struct ProductCellView_Previews: PreviewProvider {
     static var previews: some View {
-        let product = Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)
-        ProductCellView(product: product).previewLayout(.fixed(width: 300, height: 100))
+
+        ProductCellView(image:"product", title: "Prime Ultraspeed Stunt", description: "Size 10.5", quantity: 1, price: 90.0).previewLayout(.fixed(width: 300, height: 100))
     }
 }

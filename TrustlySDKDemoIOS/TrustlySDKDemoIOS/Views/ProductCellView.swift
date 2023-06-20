@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum ProductCellType{
+    case cart
+    case catalog
+}
+
 struct ProductCellView: View, Identifiable {
     var id = UUID()
     
@@ -15,6 +20,7 @@ struct ProductCellView: View, Identifiable {
     let title: String
     let description: String
     let price: Double
+    let cellType: ProductCellType
 
     var body: some View {
         HStack(alignment: .top){
@@ -34,15 +40,16 @@ struct ProductCellView: View, Identifiable {
                     .fontWeight(.regular)
                     .foregroundColor(Color.ui.productDescription)
                 HStack{
-                    Stepper(value: $quantity,
-                            in: 1...5,
-                            step: 1) {
-                        Text("Qty: \(quantity)")
-                            .font(.custom("Open Sans", size: 16.0))
-                            .fontWeight(.regular)
-                            .foregroundColor(Color.ui.productQuantity)
-
-                    }.fixedSize()
+//                    Stepper(value: $quantity,
+//                            in: 0...5,
+//                            step: 1) {
+//                        Text("Qty: \(quantity)")
+//                            .font(.custom("Open Sans", size: 16.0))
+//                            .fontWeight(.regular)
+//                            .foregroundColor(Color.ui.productQuantity)
+//
+//                    }.fixedSize()
+                    self.showQuantityToReadOrSelect()
                     Spacer()
                     Text(price.toCurrencyFormat())
                         .font(.custom("Open Sans", size: 16.0))
@@ -55,11 +62,32 @@ struct ProductCellView: View, Identifiable {
             
     }
     
+    private func showQuantityToReadOrSelect() -> AnyView {
+        
+        let textQuantity = Text("Qty: \(quantity)")
+            .font(.custom("Open Sans", size: 16.0))
+            .fontWeight(.regular)
+            .foregroundColor(Color.ui.productQuantity)
+        
+        switch self.cellType {
+        case .cart:
+            return AnyView(textQuantity)
+            
+        case .catalog:
+            return  AnyView(Stepper(value: $quantity, in: 0...5, step: 1) {
+                textQuantity
+                
+            }.fixedSize())
+
+        }
+        
+    }
+    
 }
 
 struct ProductCellView_Previews: PreviewProvider {
     static var previews: some View {
 
-        ProductCellView(image:"product", title: "Prime Ultraspeed Stunt", description: "Size 10.5", price: 90.0).previewLayout(.fixed(width: 300, height: 100))
+        ProductCellView(image:"product", title: "Prime Ultraspeed Stunt", description: "Size 10.5", price: 90.0, cellType: .catalog).previewLayout(.fixed(width: 300, height: 100))
     }
 }

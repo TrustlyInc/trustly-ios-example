@@ -43,7 +43,8 @@ class ProductListViewModel: ProductListViewModelProtocol {
             products.append(ProductCellView(image: $0.image,
                                             title: $0.title,
                                             description: $0.description,
-                                            price: $0.price))
+                                            price: $0.price,
+                                            cellType: .catalog))
         }
     }
 }

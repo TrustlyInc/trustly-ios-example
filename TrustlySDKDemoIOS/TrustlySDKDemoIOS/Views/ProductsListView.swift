@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProductsListView<ViewModel>: View where ViewModel: ProductListViewModelProtocol {
+struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtocol {
     
     @ObservedObject var viewModel: ViewModel
     let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]

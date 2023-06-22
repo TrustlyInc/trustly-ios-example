@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct Product: Identifiable {
+struct Product: Hashable, Identifiable {
     var id = UUID()
     let title: String
     let description: String
     let image: String
-    let quantity: Int
+    var quantity: Int
     let price: Double
 
 }

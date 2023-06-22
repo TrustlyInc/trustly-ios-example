@@ -10,21 +10,22 @@ import SwiftUI
 struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtocol {
     
     @ObservedObject var viewModel: ViewModel
-    let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]
+    @State private var isShowingCartView = false
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading){
                 Image("logo").padding()
                 
-                List(viewModel.products) { product in
-                        product.listRowSeparator(.hidden)
+                List($viewModel.products) { $product in
+                    ProductCellView(product: $product, cellType: .catalog).listRowSeparator(.hidden)
                     
                     Divider()
                 }
                 .listStyle(.plain)
                 
-                NavigationLink{
-                    CartView(viewModel: CartViewModel(selectedProducts: products)).toolbarRole(.editor)
+                Button{
+                    isShowingCartView = true
                 } label: {
                     Text("Go to cart")
                         .padding()
@@ -37,17 +38,20 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
 
                 }
 
+
             }.navigationBarTitle("Purchase sneakers")
                 .navigationBarTitleDisplayMode(.inline)
+            
+            NavigationLink(destination: CartView(), isActive: $isShowingCartView) { EmptyView() }
                 
         }.onAppear{
-            viewModel.fetchProductsCells()
-        }
+            viewModel.fetchProducts()
+        }.environmentObject(viewModel)
     }
 }
 
 struct ProductsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsListView(viewModel: ProductListViewModel())
+        ProductsListView(viewModel: ProductViewModel())
     }
 }

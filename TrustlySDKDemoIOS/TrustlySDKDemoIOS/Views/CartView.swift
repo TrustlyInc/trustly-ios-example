@@ -7,31 +7,30 @@
 
 import SwiftUI
 
-struct CartView<ViewModel>: View where ViewModel: CartViewModel {
+struct CartView<ViewModel>: View where ViewModel: ProductViewModel {
     
-    @ObservedObject var viewModel: ViewModel
+    @EnvironmentObject var viewModel: ViewModel
     
     var body: some View {
         
-        NavigationView{
+        NavigationStack {
             VStack(alignment: .leading){
                 HeaderView(title: "Shopping cart", imageName: "logo")
-            
-                List(viewModel.products){ product in
-                    product
+                
+                List($viewModel.selectedProducts){ $product in
+                    ProductCellView(product: $product, cellType: .cart).listRowSeparator(.hidden)
+                    
                     Divider()
                 }.listStyle(.plain)
-                    
-
-                Divider()
+                
                 HStack{
                     Text("Subtotal:")
                     Spacer()
-                    Text("$90.00")
+                    Text(self.viewModel.calculateSubTotal().toCurrencyFormat())
                 }.padding()
                 
                 NavigationLink{
-//                    CartView().toolbarRole(.editor)
+                    //                    CartView().toolbarRole(.editor)
                 } label: {
                     Text("Go to checkout")
                         .padding()
@@ -41,18 +40,20 @@ struct CartView<ViewModel>: View where ViewModel: CartViewModel {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                         .padding()
-
+                    
                 }
-            }
-        }.navigationBarTitle("Purchase sneakers")
-            .navigationBarTitleDisplayMode(.inline)
+            }.navigationBarTitle("Purchase sneakers")
+                .navigationBarTitleDisplayMode(.inline)
+            
+        }.onAppear {
+            self.viewModel.fetchSelectedProducts()
+        }
             
     }
 }
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]
-        CartView(viewModel: CartViewModel(selectedProducts: products))
+        CartView()
     }
 }

@@ -19,10 +19,11 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
                 
                 List($viewModel.products) { $product in
                     ProductCellView(product: $product, cellType: .catalog).listRowSeparator(.hidden)
-                    
-                    Divider()
+
                 }
                 .listStyle(.plain)
+                
+                Divider()
                 
                 Button{
                     isShowingCartView = true
@@ -42,7 +43,10 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
             }.navigationBarTitle("Purchase sneakers")
                 .navigationBarTitleDisplayMode(.inline)
             
-            NavigationLink(destination: CartView(), isActive: $isShowingCartView) { EmptyView() }
+            NavigationLink(destination: CartView().toolbarRole(.editor), isActive: $isShowingCartView) {
+                EmptyView()
+                
+            }
                 
         }.onAppear{
             viewModel.fetchProducts()

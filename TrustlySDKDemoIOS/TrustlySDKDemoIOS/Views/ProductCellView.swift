@@ -10,6 +10,7 @@ import SwiftUI
 enum ProductCellType{
     case cart
     case catalog
+    case checkout
 }
 
 struct ProductCellView: View, Identifiable {
@@ -57,7 +58,7 @@ struct ProductCellView: View, Identifiable {
             .foregroundColor(Color.ui.productQuantity)
         
         switch self.cellType {
-        case .cart:
+        case .cart, .checkout:
             return AnyView(textQuantity)
             
         case .catalog:

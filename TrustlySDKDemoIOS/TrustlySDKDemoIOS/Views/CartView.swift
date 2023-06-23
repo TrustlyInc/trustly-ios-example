@@ -20,8 +20,9 @@ struct CartView<ViewModel>: View where ViewModel: ProductViewModel {
                 List($viewModel.selectedProducts){ $product in
                     ProductCellView(product: $product, cellType: .cart).listRowSeparator(.hidden)
                     
-                    Divider()
                 }.listStyle(.plain)
+                
+                Divider()
                 
                 HStack{
                     Text("Subtotal:")
@@ -30,7 +31,7 @@ struct CartView<ViewModel>: View where ViewModel: ProductViewModel {
                 }.padding()
                 
                 NavigationLink{
-                    //                    CartView().toolbarRole(.editor)
+                    CheckoutView(viewModel: CheckoutViewModel(products: viewModel.selectedProducts)).toolbarRole(.editor)
                 } label: {
                     Text("Go to checkout")
                         .padding()

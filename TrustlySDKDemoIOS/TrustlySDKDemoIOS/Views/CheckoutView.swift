@@ -7,15 +7,9 @@
 
 import SwiftUI
 
-struct CheckoutView: View {
-    let products = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0),
-                    Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 1, price: 90.0)]
+struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
+
+    @ObservedObject var viewModel: ViewModel
 
     
     var body: some View {
@@ -23,9 +17,9 @@ struct CheckoutView: View {
         NavigationView{
             VStack(alignment: .leading){
                 HeaderView(title: "Checkout", imageName: "logo")
-                List(products){ product in
-                    ProductCellView(product: product).listRowSeparator(.hidden)
-                    Divider()
+                List($viewModel.products){ $product in
+                    ProductCellView(product: $product, cellType: .checkout).listRowSeparator(.hidden)
+                    
                 }.listStyle(.plain)
                     
                 Divider()
@@ -36,7 +30,7 @@ struct CheckoutView: View {
                     .padding()
                 
                 Divider()
-                FooterView()
+                FooterView(viewModel: viewModel)
                 
                 Button {
                     print("Checkout")
@@ -59,6 +53,8 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView()
+        let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 0, price: 90.0)]
+        
+        CheckoutView(viewModel: CheckoutViewModel(products: productsList))
     }
 }

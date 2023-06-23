@@ -7,18 +7,21 @@
 
 import SwiftUI
 
-struct FooterView: View {
+struct FooterView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
+    
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
         VStack{
             HStack{
                 Text("Subtotal:")
                 Spacer()
-                Text("$90.00")
+                Text(viewModel.calculateSubTotal().toCurrencyFormat())
             }.padding()
             HStack{
                 Text("Shipping:")
                 Spacer()
-                Text("Free")
+                Text(viewModel.getShippingFormatted())
             }.padding(.leading, 15)
                 .padding(.trailing, 15)
             
@@ -27,7 +30,7 @@ struct FooterView: View {
             HStack{
                 Text("Total:")
                 Spacer()
-                Text("$190.00")
+                Text(viewModel.calculateTotal().toCurrencyFormat())
             }.padding(.all)
 
         }
@@ -36,6 +39,8 @@ struct FooterView: View {
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        FooterView().previewLayout(.sizeThatFits)
+        let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 0, price: 90.0)]
+
+        FooterView(viewModel: CheckoutViewModel(products: productsList)).previewLayout(.sizeThatFits)
     }
 }

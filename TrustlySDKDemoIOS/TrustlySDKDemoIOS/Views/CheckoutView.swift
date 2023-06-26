@@ -17,36 +17,50 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
         NavigationView{
             VStack(alignment: .leading){
                 HeaderView(title: "Checkout", imageName: "logo")
-                List($viewModel.products){ $product in
-                    ProductCellView(product: $product, cellType: .checkout).listRowSeparator(.hidden)
+                List {
+                    ForEach($viewModel.products) { $product in
+                        ProductCellView(product: $product, cellType: .checkout).listRowSeparator(.hidden)
+                    }
                     
+                    VStack{
+                        Divider()
+                        HStack {
+                            Text("Payment method")
+                                .font(.custom("Open Sans", size: 16.0))
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color.ui.subTitle)
+                                .padding()
+                            Spacer()
+                        }
+
+                        TrustlyRepresentedView()
+                            .frame(minHeight: 550, maxHeight: .infinity)
+                        
+                        Divider()
+                        FooterView(viewModel: viewModel)
+                        
+                        Button {
+                            print("Checkout")
+                        } label: {
+                            Text("Place order")
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.ui.checkoutButton)
+                                .border(Color.ui.checkoutButton)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .padding()
+                        }
+
+                    }.listRowSeparator(.hidden)
                 }.listStyle(.plain)
                     
-                Divider()
-                Text("Payment method")
-                    .font(.custom("Open Sans", size: 16.0))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color.ui.subTitle)
-                    .padding()
-                
-                Divider()
-                FooterView(viewModel: viewModel)
-                
-                Button {
-                    print("Checkout")
-                } label: {
-                    Text("Place order")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.ui.checkoutButton)
-                        .border(Color.ui.checkoutButton)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
-                }
+
             }
         }.navigationBarTitle("Purchase sneakers")
             .navigationBarTitleDisplayMode(.inline)
+            .frame(maxHeight: .infinity)
+        
             
     }
 }

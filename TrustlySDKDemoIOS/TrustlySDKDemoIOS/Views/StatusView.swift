@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StatusView<ViewModel>: View where ViewModel: StatusViewModel {
+struct StatusView<ViewModel>: View where ViewModel: StatusViewModelProtocol {
         
     @ObservedObject var viewModel: ViewModel
     

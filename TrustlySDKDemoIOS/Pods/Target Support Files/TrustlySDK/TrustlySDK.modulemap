@@ -1,0 +1,6 @@
+framework module TrustlySDK {
+  umbrella header "TrustlySDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

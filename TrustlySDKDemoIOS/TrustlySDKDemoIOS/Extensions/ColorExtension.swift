@@ -19,6 +19,8 @@ extension Color {
         let productPrice = Color("ProductPrice")
         let productQuantity = Color("ProductQuantity")
         let productTitle = Color("ProductTitle")
+        let transactionLabel = Color("transactionLabel")
+        let transactionText = Color("transactionText")
         
     }
 }

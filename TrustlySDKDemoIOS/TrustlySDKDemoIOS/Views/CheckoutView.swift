@@ -14,7 +14,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
     
     var body: some View {
         
-        NavigationView{
+        NavigationView {
             VStack(alignment: .leading){
                 HeaderView(title: "Checkout", imageName: "logo")
                 List {
@@ -59,8 +59,9 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
         }.navigationBarTitle("Purchase sneakers")
             .navigationBarTitleDisplayMode(.inline)
             .frame(maxHeight: .infinity)
-        
-            
+            .onAppear {
+                self.viewModel.updateEstablishWithValue()
+            }
     }
 
 }

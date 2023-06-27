@@ -16,6 +16,7 @@ protocol CheckoutViewModelProtocol: ObservableObject {
     func calculateShipping() -> Double
     func getShippingFormatted() -> String
     func disableCheckout() -> Bool
+    func updateEstablishWithValue()
     
 }
 
@@ -30,7 +31,6 @@ class CheckoutViewModel: CheckoutViewModelProtocol {
         self.establishData = ["accessId": "A48B73F694C4C8EE6306",
                               "merchantId" : "110005514",
                               "currency" : "USD",
-                              "amount" : "1.00",
                               "merchantReference" : "cac73df7-52b4-47d7-89d3-9628d4cfb65e",
                               "paymentType" : "Retrieval",
                               "returnUrl": "/returnUrl",
@@ -79,5 +79,9 @@ class CheckoutViewModel: CheckoutViewModelProtocol {
         }
         
         return true
+    }
+    
+    func updateEstablishWithValue() {
+        establishData["amount"] = String(self.calculateTotal())
     }
 }

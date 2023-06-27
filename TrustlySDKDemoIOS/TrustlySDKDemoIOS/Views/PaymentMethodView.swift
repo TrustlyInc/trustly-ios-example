@@ -15,15 +15,23 @@ struct PaymentMethodView<ViewModel>: View where ViewModel: CheckoutViewModelProt
     var body: some View {
         VStack {
             
-            Picker(selection: $selected, label: Text("Favorite Fruit")) {
-                        Text("Online Banking").tag(1)
-                        Text("Credit card").tag(2)
-                    }
-                    .pickerStyle(.segmented)
+            HStack {
+                Picker(selection: $selected, label: Text("Favorite Fruit")) {
+                            Text("Online Banking").tag(1)
+                        }
+                        .pickerStyle(.segmented)
+                
+                Image("icon_payments")
+
+            }.padding()
+            
+            Divider()
             
             TrustlyRepresentedView()
                 .frame(minHeight: 550, maxHeight: .infinity)
-        }
+            
+        }.overlay(RoundedRectangle(cornerRadius: 6)
+            .stroke(Color.ui.boxBorder, lineWidth: 1))
     }
 }
 

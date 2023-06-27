@@ -24,17 +24,16 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                     
                     VStack{
                         Divider()
-                        HStack {
-                            Text("Payment method")
-                                .font(.custom("Open Sans", size: 16.0))
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.ui.subTitle)
-                                .padding()
-                            Spacer()
-                        }
 
-                        TrustlyRepresentedView()
-                            .frame(minHeight: 550, maxHeight: .infinity)
+                        Text("Payment method")
+                            .font(.custom("Open Sans", size: 16.0))
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.ui.subTitle)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 5)
+                            .padding(.top)
+
+                        PaymentMethodView(viewModel: viewModel)
                         
                         Divider()
                         FooterView(viewModel: viewModel)
@@ -63,11 +62,12 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
         
             
     }
+
 }
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 0, price: 90.0)]
+        let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
         
         CheckoutView(viewModel: CheckoutViewModel(products: productsList))
     }

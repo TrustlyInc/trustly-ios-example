@@ -21,6 +21,7 @@ extension Color {
         let productTitle = Color("ProductTitle")
         let transactionLabel = Color("transactionLabel")
         let transactionText = Color("transactionText")
+        let boxBorder = Color("boxBorder")
         
     }
 }

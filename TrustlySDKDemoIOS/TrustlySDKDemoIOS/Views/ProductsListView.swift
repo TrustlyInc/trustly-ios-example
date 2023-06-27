@@ -43,7 +43,7 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
             }.navigationBarTitle("Purchase sneakers")
                 .navigationBarTitleDisplayMode(.inline)
             
-            NavigationLink(destination: CartView().toolbarRole(.editor), isActive: $isShowingCartView) {
+            NavigationLink(destination: CartView<ViewModel>().toolbarRole(.editor), isActive: $isShowingCartView) {
                 EmptyView()
                 
             }

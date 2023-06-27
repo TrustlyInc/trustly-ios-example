@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CartView<ViewModel>: View where ViewModel: ProductViewModel {
+struct CartView<ViewModel>: View where ViewModel: ProductViewModelProtocol {
     
     @EnvironmentObject var viewModel: ViewModel
     
@@ -55,6 +55,6 @@ struct CartView<ViewModel>: View where ViewModel: ProductViewModel {
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        CartView().environmentObject(ProductViewModel())
+        CartView<ProductViewModel>().environmentObject(ProductViewModel())
     }
 }

@@ -9,20 +9,39 @@ import Foundation
 
 protocol CheckoutViewModelProtocol: ObservableObject {
     var products: [Product] { get set }
+    var establishData: Dictionary<AnyHashable,Any>  { get set }
     
     func calculateSubTotal() -> Double
     func calculateTotal() -> Double
     func calculateShipping() -> Double
     func getShippingFormatted() -> String
+    func disableCheckout() -> Bool
     
 }
 
 class CheckoutViewModel: CheckoutViewModelProtocol {
 
     @Published var products: [Product] = [Product]()
+    @Published var establishData: Dictionary<AnyHashable,Any>
     
     init(products: [Product]) {
         self.products = products
+        
+        self.establishData = ["accessId": "A48B73F694C4C8EE6306",
+                              "merchantId" : "110005514",
+                              "currency" : "USD",
+                              "amount" : "1.00",
+                              "merchantReference" : "cac73df7-52b4-47d7-89d3-9628d4cfb65e",
+                              "paymentType" : "Retrieval",
+                              "returnUrl": "/returnUrl",
+                              "cancelUrl": "/cancelUrl",
+                              "requestSignature": "HT5mVOqBXa8ZlvgX2USmPeLns5o=",
+                              "customer.name": "John",
+                              "customer.address.country": "US",
+                              "metadata.urlScheme": "demoapp://",
+                              "description": "First Data Mobile Test",
+                              "env": "sandbox",
+                              "localUrl": "192.168.0.13:8000"]
     }
 
     
@@ -51,5 +70,14 @@ class CheckoutViewModel: CheckoutViewModelProtocol {
         }
         
         return shipping.toCurrencyFormat()
+    }
+    
+    func disableCheckout() -> Bool {
+        
+        if establishData.keys.contains("paymentProviderId") {
+            return false
+        }
+        
+        return true
     }
 }

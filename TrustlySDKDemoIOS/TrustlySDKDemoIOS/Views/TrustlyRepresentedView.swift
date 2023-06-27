@@ -9,38 +9,20 @@ import SwiftUI
 import TrustlySDK
 
 struct TrustlyRepresentedView: UIViewRepresentable {
-    
+
     typealias UIViewType = TrustlyView
     
-
+    @Binding var establishData: Dictionary<AnyHashable,Any>
+    
 }
 
 extension TrustlyRepresentedView {
+    
+    
     func makeUIView(context: Context) -> TrustlySDK.TrustlyView {
         let trustlyView = TrustlyView()
-        
-        var establishData: Dictionary<AnyHashable,Any> = ["accessId": "A48B73F694C4C8EE6306",
-                             "merchantId" : "110005514",
-                             "currency" : "USD",
-                             "amount" : "1.00",
-                             "merchantReference" : "cac73df7-52b4-47d7-89d3-9628d4cfb65e",
-                             "paymentType" : "Retrieval",
-                             "returnUrl": "/returnUrl",
-                             "cancelUrl": "/cancelUrl",
-                             "requestSignature": "HT5mVOqBXa8ZlvgX2USmPeLns5o=",
-                             "customer.name": "John",
-                             "customer.address.country": "US",
-                             "metadata.urlScheme": "demoapp://",
-                             "description": "First Data Mobile Test",
-                             "env": "sandbox",
-                             "localUrl": "192.168.0.13:8000"]
-        
-        trustlyView.onChangeListener { (eventName, attributes) in
-            print("onChangeListener: \(eventName) \(attributes)")
-        }
 
         trustlyView.selectBankWidget(establishData: establishData) { (view, data) in
-            print("returnParameters:\(data)")
             establishData = data
         }
         
@@ -53,7 +35,12 @@ extension TrustlyRepresentedView {
 }
 
 struct TrustlyView_Previews: PreviewProvider {
+    static let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
+    
+    @State static var establishData: Dictionary<AnyHashable,Any> = [:]
+    
     static var previews: some View {
-        TrustlyRepresentedView()
+        TrustlyRepresentedView(establishData: $establishData)
+
     }
 }

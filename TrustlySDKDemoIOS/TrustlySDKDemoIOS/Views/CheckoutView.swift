@@ -39,7 +39,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                         FooterView(viewModel: viewModel)
                         
                         Button {
-                            print("Checkout")
+                            
                         } label: {
                             Text("Place order")
                                 .padding()
@@ -49,8 +49,8 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .padding()
-                        }
-
+                        }.disabled(viewModel.disableCheckout())
+                        
                     }.listRowSeparator(.hidden)
                 }.listStyle(.plain)
                     

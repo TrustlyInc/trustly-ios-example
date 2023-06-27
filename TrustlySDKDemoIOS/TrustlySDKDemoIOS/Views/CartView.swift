@@ -55,6 +55,6 @@ struct CartView<ViewModel>: View where ViewModel: ProductViewModel {
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        CartView()
+        CartView().environmentObject(ProductViewModel())
     }
 }

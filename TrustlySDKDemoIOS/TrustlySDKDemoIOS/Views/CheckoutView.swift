@@ -10,6 +10,7 @@ import SwiftUI
 struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
 
     @ObservedObject var viewModel: ViewModel
+    @State private var isShowingPaymentView = false
 
     
     var body: some View {
@@ -17,6 +18,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
         NavigationView {
             VStack(alignment: .leading){
                 HeaderView(title: "Checkout", imageName: "logo")
+                
                 List {
                     ForEach($viewModel.products) { $product in
                         ProductCellView(product: $product, cellType: .checkout).listRowSeparator(.hidden)
@@ -39,7 +41,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                         FooterView(viewModel: viewModel)
                         
                         Button {
-                            
+                            isShowingPaymentView.toggle()
                         } label: {
                             Text("Place order")
                                 .padding()
@@ -53,15 +55,20 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                         
                     }.listRowSeparator(.hidden)
                 }.listStyle(.plain)
-                    
+                
+            }.navigationBarTitle("Purchase sneakers")
+                .navigationBarTitleDisplayMode(.inline)
+                .frame(maxHeight: .infinity)
+            
+            NavigationLink(destination: PaymentView<ViewModel>().environmentObject(viewModel).toolbarRole(.editor),
+                           isActive: $isShowingPaymentView) {
+                EmptyView()
+                
+            }
 
-            }
-        }.navigationBarTitle("Purchase sneakers")
-            .navigationBarTitleDisplayMode(.inline)
-            .frame(maxHeight: .infinity)
-            .onAppear {
-                self.viewModel.updateEstablishWithValue()
-            }
+        }.onAppear {
+            viewModel.updateEstablishWithValue()
+        }
     }
 
 }

@@ -17,9 +17,24 @@ struct TrustlyRepresentedView: UIViewRepresentable {
 
     typealias UIViewType = UIView
     typealias LightBoxOnReturn = ([String: String]) -> Void
+    typealias LightBoxOnCancel = ([String: String]) -> Void
     
     @Binding var establishData: Dictionary<AnyHashable,Any>
     var paymentMethodRendering: PaymentMethodRendering
+    var onReturn: LightBoxOnReturn?
+    var onCancel: LightBoxOnCancel?
+    
+    init (establishData: Binding<Dictionary<AnyHashable,Any>>, paymentMethodRendering: PaymentMethodRendering){
+        self._establishData = establishData
+        self.paymentMethodRendering = paymentMethodRendering
+    }
+    
+    init (establishData: Binding<Dictionary<AnyHashable,Any>>, paymentMethodRendering: PaymentMethodRendering, onReturn: @escaping LightBoxOnReturn, onCancel: @escaping LightBoxOnCancel){
+        self._establishData = establishData
+        self.paymentMethodRendering = paymentMethodRendering
+        self.onReturn = onReturn
+        self.onCancel = onCancel
+    }
     
 }
 

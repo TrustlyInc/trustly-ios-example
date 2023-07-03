@@ -27,7 +27,7 @@ struct PaymentMethodView<ViewModel>: View where ViewModel: CheckoutViewModelProt
             
             Divider()
             
-            TrustlyRepresentedView(establishData: $viewModel.establishData)
+            TrustlyRepresentedView(establishData: $viewModel.establishData, paymentMethodRendering: .widget)
                 .frame(minHeight: 550, maxHeight: .infinity)
             
         }.overlay(RoundedRectangle(cornerRadius: 6)

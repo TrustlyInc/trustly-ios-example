@@ -26,7 +26,7 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
                 Divider()
                 
                 Button{
-                    isShowingCartView = true
+                    isShowingCartView.toggle()
                 } label: {
                     Text("Go to cart")
                         .padding()
@@ -36,9 +36,7 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
                         .foregroundColor(.white)
                         .cornerRadius(10)
                         .padding()
-
-                }
-
+                }.disabled(viewModel.disableButton())
 
             }.navigationBarTitle("Purchase sneakers")
                 .navigationBarTitleDisplayMode(.inline)

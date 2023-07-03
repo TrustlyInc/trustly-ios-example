@@ -14,6 +14,7 @@ protocol ProductViewModelProtocol: ObservableObject {
     func fetchProducts()
     func fetchSelectedProducts()
     func calculateSubTotal() -> Double
+    func disableButton() -> Bool
     
 }
 
@@ -52,5 +53,9 @@ class ProductViewModel: ProductViewModelProtocol {
     
     func calculateSubTotal() -> Double {
         return self.selectedProducts.map{ Double($0.quantity) * $0.price}.reduce(0.0, +)
+    }
+    
+    func disableButton() -> Bool {
+        return (products.filter { product in return product.quantity > 0 }).count <= 0
     }
 }

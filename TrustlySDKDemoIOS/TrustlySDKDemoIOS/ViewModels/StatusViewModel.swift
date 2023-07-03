@@ -8,7 +8,8 @@
 import Foundation
 
 protocol StatusViewModelProtocol: ObservableObject {
-    var isSuccess: Bool { get set }
+
+    var transaction: Transaction? { get set }
     
     func getStatusMessage() -> String
     func getStatusImage() -> String
@@ -17,19 +18,23 @@ protocol StatusViewModelProtocol: ObservableObject {
 
 class StatusViewModel: StatusViewModelProtocol {
     
-    @Published var isSuccess: Bool
+    @Published var transaction: Transaction?
     
     private let messageSuccess = "Payment Type\nAdded Successfully"
     private let messageFailure = "Payment Authorization\nCanceled"
     private let imageSuccess = "icon_success"
     private let imageFailure = "icon_failure"
     
-    init (isSuccess: Bool) {
-        self.isSuccess = isSuccess
+    init () {
+
+    }
+    
+    init (transaction: Transaction?) {
+        self.transaction = transaction
     }
 
     func getStatusMessage() -> String {
-        if isSuccess {
+        if isSuccess() {
             return messageSuccess
             
         } else {
@@ -39,13 +44,19 @@ class StatusViewModel: StatusViewModelProtocol {
     }
     
     func getStatusImage() -> String {
-        if isSuccess {
+        if isSuccess() {
             return imageSuccess
             
         } else {
             return imageFailure
             
         }
+    }
+    
+    private func isSuccess() -> Bool {
+        guard let transaction = self.transaction else { return false }
+        
+        return transaction.status == TransactionStatus.Authorized
     }
     
 }

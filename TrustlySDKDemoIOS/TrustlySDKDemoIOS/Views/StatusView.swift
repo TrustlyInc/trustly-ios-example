@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct StatusView<ViewModel>: View where ViewModel: StatusViewModelProtocol {
+struct StatusView<StatusViewModel>: View where StatusViewModel: StatusViewModelProtocol {
         
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var statusViewModel: StatusViewModel
     
     var body: some View {
         VStack{
-            Image(viewModel.getStatusImage())
-            Text(viewModel.getStatusMessage())
+            Image(statusViewModel.getStatusImage())
+            Text(statusViewModel.getStatusMessage())
                 .font(.custom("Open Sans", size: 28.0))
                 .fontWeight(.bold)
                 .foregroundColor(Color.ui.productQuantity)
@@ -61,6 +61,6 @@ struct StatusView<ViewModel>: View where ViewModel: StatusViewModelProtocol {
 
 struct StatusView_Previews: PreviewProvider {
     static var previews: some View {
-        StatusView(viewModel: StatusViewModel(isSuccess: true))
+        StatusView(statusViewModel: StatusViewModel())
     }
 }

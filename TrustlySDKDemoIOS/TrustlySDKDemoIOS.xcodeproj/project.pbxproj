@@ -20,7 +20,7 @@
 		1599E83D2A49AC99004BAB03 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599E83C2A49AC99004BAB03 /* StatusView.swift */; };
 		1599E83F2A49B137004BAB03 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599E83E2A49B137004BAB03 /* StatusViewModel.swift */; };
 		1599E8412A49B6AC004BAB03 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599E8402A49B6AC004BAB03 /* TransactionDetailView.swift */; };
-		1599E8432A49BA1C004BAB03 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599E8422A49BA1C004BAB03 /* TransactionViewModel.swift */; };
+		1599E8432A49BA1C004BAB03 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599E8422A49BA1C004BAB03 /* PaymentViewModel.swift */; };
 		1599E8452A49BAE6004BAB03 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599E8442A49BAE6004BAB03 /* Transaction.swift */; };
 		1599E8472A49C35D004BAB03 /* TrustlyRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1599E8462A49C35D004BAB03 /* TrustlyRepresentedView.swift */; };
 		159DD6D32A4B2A3600EC3E17 /* PaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159DD6D22A4B2A3600EC3E17 /* PaymentMethodView.swift */; };
@@ -74,7 +74,7 @@
 		1599E83C2A49AC99004BAB03 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		1599E83E2A49B137004BAB03 /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		1599E8402A49B6AC004BAB03 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
-		1599E8422A49BA1C004BAB03 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		1599E8422A49BA1C004BAB03 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		1599E8442A49BAE6004BAB03 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		1599E8462A49C35D004BAB03 /* TrustlyRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlyRepresentedView.swift; sourceTree = "<group>"; };
 		159DD6D22A4B2A3600EC3E17 /* PaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodView.swift; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 				15B45DAC2A42153C002C6EC8 /* ProductViewModel.swift */,
 				15CA83772A45D935003D3288 /* CheckoutViewModel.swift */,
 				1599E83E2A49B137004BAB03 /* StatusViewModel.swift */,
-				1599E8422A49BA1C004BAB03 /* TransactionViewModel.swift */,
+				1599E8422A49BA1C004BAB03 /* PaymentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				15A2A3742A3CA3D6007F22A4 /* ProductsListView.swift in Sources */,
 				1599E8452A49BAE6004BAB03 /* Transaction.swift in Sources */,
 				1599E8412A49B6AC004BAB03 /* TransactionDetailView.swift in Sources */,
-				1599E8432A49BA1C004BAB03 /* TransactionViewModel.swift in Sources */,
+				1599E8432A49BA1C004BAB03 /* PaymentViewModel.swift in Sources */,
 				150F7C042A3CFA6A003AD5B0 /* FooterView.swift in Sources */,
 				150F7BFE2A3CEB4D003AD5B0 /* ColorExtension.swift in Sources */,
 				159DD6D82A4B82AB00EC3E17 /* PaymentView.swift in Sources */,

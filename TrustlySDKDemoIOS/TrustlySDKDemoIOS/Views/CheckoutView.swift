@@ -37,6 +37,7 @@ struct CheckoutView<CheckoutViewModel, PaymentViewModel>: View where CheckoutVie
                             .padding(.leading, 5)
                             .padding(.top)
 
+                        PaymentMethodView(viewModel: checkoutViewModel, paymentAuthorized: paymentViewModel.paymentAuthorized())
                         
                         Divider()
                         FooterView(viewModel: checkoutViewModel)

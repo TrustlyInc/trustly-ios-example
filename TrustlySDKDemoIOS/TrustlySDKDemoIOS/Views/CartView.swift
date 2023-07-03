@@ -31,7 +31,9 @@ struct CartView<ViewModel>: View where ViewModel: ProductViewModelProtocol {
                 }.padding()
                 
                 NavigationLink{
-                    CheckoutView(viewModel: CheckoutViewModel(products: viewModel.selectedProducts)).toolbarRole(.editor)
+                    CheckoutView(checkoutViewModel: CheckoutViewModel(products: viewModel.selectedProducts),
+                                 paymentViewModel: PaymentViewModel()
+                    ).toolbarRole(.editor)
                 } label: {
                     Text("Go to checkout")
                         .padding()

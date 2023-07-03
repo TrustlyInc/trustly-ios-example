@@ -7,32 +7,34 @@
 
 import SwiftUI
 
-struct PaymentView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
+struct PaymentView<ViewModel>: View where ViewModel: PaymentViewModelProtocol {
     
-    @EnvironmentObject var viewModel: ViewModel
+    @Environment(\.dismiss) private var dismiss
+    @ObservedObject var viewModel: ViewModel
+    @Binding var establishData: Dictionary<AnyHashable,Any>
     
     var body: some View {
-        TrustlyRepresentedView(establishData: $viewModel.establishData,
+        TrustlyRepresentedView(establishData: $establishData,
                                paymentMethodRendering: .lightBox,
-                               onReturn: self.onSuccess,
-                               onCancel: self.onError)
+                               onReturn: self.handleTransactionResponse,
+                               onCancel: self.handleTransactionResponse)
         .frame(minHeight: 550, maxHeight: .infinity)
         .navigationBarHidden(true)
     }
     
-    private func onSuccess(response: [String:String]) -> Void {
-        print("onSuccess: \(response)")
+    private func handleTransactionResponse(response: [String:String]) -> Void {
+        print("handleTransactionResponse: \(response)")
+        viewModel.createTransaction(response: response)
+        dismiss()
     }
     
-    private func onError(response: [String:String]) -> Void {
-        print("onError: \(response)")
-    }
 }
 
 struct PaymentView_Previews: PreviewProvider {
+    @State static var establish = [AnyHashable: Any]()
+    
     static var previews: some View {
-        let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
-        PaymentView<CheckoutViewModel>().environmentObject(CheckoutViewModel(products: productsList))
+        PaymentView(viewModel: PaymentViewModel(), establishData: $establish)
         
     }
 }

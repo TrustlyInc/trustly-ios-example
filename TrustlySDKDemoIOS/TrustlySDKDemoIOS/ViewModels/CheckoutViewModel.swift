@@ -84,4 +84,6 @@ class CheckoutViewModel: CheckoutViewModelProtocol {
     func updateEstablishWithValue() {
         establishData["amount"] = String(self.calculateTotal())
     }
+    
+
 }

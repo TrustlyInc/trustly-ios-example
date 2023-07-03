@@ -38,7 +38,7 @@ class CheckoutViewModel: CheckoutViewModelProtocol {
                               "requestSignature": "HT5mVOqBXa8ZlvgX2USmPeLns5o=",
                               "customer.name": "John",
                               "customer.address.country": "US",
-                              "metadata.urlScheme": "demoapp://",
+                              "metadata.urlScheme": "basicCheckout://",
                               "description": "First Data Mobile Test",
                               "env": "sandbox",
                               "localUrl": "192.168.0.13:8000"]

@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
+struct CheckoutView<CheckoutViewModel, PaymentViewModel>: View where CheckoutViewModel: CheckoutViewModelProtocol, PaymentViewModel: PaymentViewModelProtocol {
 
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var checkoutViewModel: CheckoutViewModel
+    @ObservedObject var paymentViewModel: PaymentViewModel
     @State private var isShowingPaymentView = false
+    @State private var isShowingStatusView = false
 
     
     var body: some View {
@@ -20,7 +22,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                 HeaderView(title: "Checkout", imageName: "logo")
                 
                 List {
-                    ForEach($viewModel.products) { $product in
+                    ForEach($checkoutViewModel.products) { $product in
                         ProductCellView(product: $product, cellType: .checkout).listRowSeparator(.hidden)
                     }
                     
@@ -35,13 +37,18 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                             .padding(.leading, 5)
                             .padding(.top)
 
-                        PaymentMethodView(viewModel: viewModel)
                         
                         Divider()
-                        FooterView(viewModel: viewModel)
+                        FooterView(viewModel: checkoutViewModel)
                         
                         Button {
-                            isShowingPaymentView.toggle()
+                            if (paymentViewModel.paymentAuthorized()) {
+                                isShowingStatusView.toggle()
+                                
+                            } else {
+                                isShowingPaymentView.toggle()
+                            }
+                            
                         } label: {
                             Text("Place order")
                                 .padding()
@@ -51,7 +58,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .padding()
-                        }.disabled(viewModel.disableCheckout())
+                        }.disabled(checkoutViewModel.disableCheckout())
                         
                     }.listRowSeparator(.hidden)
                 }.listStyle(.plain)
@@ -59,15 +66,15 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
             }.navigationBarTitle("Purchase sneakers")
                 .navigationBarTitleDisplayMode(.inline)
                 .frame(maxHeight: .infinity)
-            
-            NavigationLink(destination: PaymentView<ViewModel>().environmentObject(viewModel).toolbarRole(.editor),
-                           isActive: $isShowingPaymentView) {
-                EmptyView()
-                
-            }
+                .navigationDestination(isPresented: $isShowingPaymentView) {
+                    PaymentView(viewModel: paymentViewModel, establishData: $checkoutViewModel.establishData).toolbarRole(.editor)
+                }
+                .navigationDestination(isPresented: $isShowingStatusView) {
+                    StatusView(statusViewModel: StatusViewModel(transaction: paymentViewModel.transaction)).toolbarRole(.editor)
+                }
 
         }.onAppear {
-            viewModel.updateEstablishWithValue()
+            checkoutViewModel.updateEstablishWithValue()
         }
     }
 
@@ -77,6 +84,6 @@ struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
         let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
         
-        CheckoutView(viewModel: CheckoutViewModel(products: productsList))
+        CheckoutView(checkoutViewModel: CheckoutViewModel(products: productsList), paymentViewModel: PaymentViewModel())
     }
 }

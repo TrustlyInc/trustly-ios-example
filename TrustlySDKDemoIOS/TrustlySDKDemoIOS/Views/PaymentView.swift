@@ -15,7 +15,9 @@ struct PaymentView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
         TrustlyRepresentedView(establishData: $viewModel.establishData,
                                paymentMethodRendering: .lightBox,
                                onReturn: self.onSuccess,
-                               onCancel: self.onError).frame(minHeight: 550, maxHeight: .infinity)
+                               onCancel: self.onError)
+        .frame(minHeight: 550, maxHeight: .infinity)
+        .navigationBarHidden(true)
     }
     
     private func onSuccess(response: [String:String]) -> Void {

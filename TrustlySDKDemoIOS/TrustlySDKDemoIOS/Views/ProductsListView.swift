@@ -13,40 +13,38 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
     @State private var isShowingCartView = false
 
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading){
-                Image("logo").padding()
-                
-                List($viewModel.products) { $product in
-                    ProductCellView(product: $product, cellType: .catalog).listRowSeparator(.hidden)
+        
+        VStack(alignment: .leading){
+            Image("logo").padding()
+            
+            List($viewModel.products) { $product in
+                ProductCellView(product: $product, cellType: .catalog).listRowSeparator(.hidden)
 
-                }
-                .listStyle(.plain)
-                
-                Divider()
-                
-                Button{
-                    isShowingCartView.toggle()
-                } label: {
-                    Text("Go to cart")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.ui.checkoutButton)
-                        .border(Color.ui.checkoutButton)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
-                }.disabled(viewModel.disableButton())
+            }
+            .listStyle(.plain)
+            
+            Divider()
+            
+            Button{
+                isShowingCartView.toggle()
+            } label: {
+                Text("Go to cart")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.ui.checkoutButton)
+                    .border(Color.ui.checkoutButton)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+            }.disabled(viewModel.disableButton())
 
-            }.navigationBarTitle("Purchase sneakers")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationDestination(isPresented: $isShowingCartView) {
-                    CartView<ViewModel>().toolbarRole(.editor)
-                }
-                
-        }.onAppear{
-            viewModel.fetchProducts()
-        }.environmentObject(viewModel)
+        }.navigationBarTitle("Purchase sneakers")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(isPresented: $isShowingCartView) {
+                CartView<ViewModel>().environmentObject(viewModel).toolbarRole(.editor)
+            }.onAppear{
+                viewModel.fetchProducts()
+            }
     }
 }
 

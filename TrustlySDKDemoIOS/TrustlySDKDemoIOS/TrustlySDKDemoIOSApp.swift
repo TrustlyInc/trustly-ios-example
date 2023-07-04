@@ -11,7 +11,9 @@ import SwiftUI
 struct TrustlySDKDemoIOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ProductsListView(viewModel: ProductViewModel())
+            NavigationStack{
+                ProductsListView(viewModel: ProductViewModel())
+            }
         }
     }
 

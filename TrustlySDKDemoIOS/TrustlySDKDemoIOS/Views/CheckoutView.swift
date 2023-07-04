@@ -17,66 +17,64 @@ struct CheckoutView<CheckoutViewModel, PaymentViewModel>: View where CheckoutVie
     
     var body: some View {
         
-        NavigationView {
-            VStack(alignment: .leading){
-                HeaderView(title: "Checkout", imageName: "logo")
+        VStack(alignment: .leading){
+            HeaderView(title: "Checkout", imageName: "logo")
+            
+            List {
+                ForEach($checkoutViewModel.products) { $product in
+                    ProductCellView(product: $product, cellType: .checkout).listRowSeparator(.hidden)
+                }
                 
-                List {
-                    ForEach($checkoutViewModel.products) { $product in
-                        ProductCellView(product: $product, cellType: .checkout).listRowSeparator(.hidden)
-                    }
+                VStack{
+                    Divider()
+
+                    Text("Payment method")
+                        .font(.custom("Open Sans", size: 16.0))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.ui.subTitle)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 5)
+                        .padding(.top)
+
+                    PaymentMethodView(viewModel: checkoutViewModel, paymentAuthorized: paymentViewModel.paymentAuthorized())
                     
-                    VStack{
-                        Divider()
-
-                        Text("Payment method")
-                            .font(.custom("Open Sans", size: 16.0))
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.ui.subTitle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 5)
-                            .padding(.top)
-
-                        PaymentMethodView(viewModel: checkoutViewModel, paymentAuthorized: paymentViewModel.paymentAuthorized())
-                        
-                        Divider()
-                        FooterView(viewModel: checkoutViewModel)
-                        
-                        Button {
-                            if (paymentViewModel.paymentAuthorized()) {
-                                isShowingStatusView.toggle()
-                                
-                            } else {
-                                isShowingPaymentView.toggle()
-                            }
+                    Divider()
+                    FooterView(viewModel: checkoutViewModel)
+                    
+                    Button {
+                        if (paymentViewModel.paymentAuthorized()) {
+                            isShowingStatusView.toggle()
                             
-                        } label: {
-                            Text("Place order")
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.ui.checkoutButton)
-                                .border(Color.ui.checkoutButton)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .padding()
-                        }.disabled(checkoutViewModel.disableCheckout())
+                        } else {
+                            isShowingPaymentView.toggle()
+                        }
                         
-                    }.listRowSeparator(.hidden)
-                }.listStyle(.plain)
-                
-            }.navigationBarTitle("Purchase sneakers")
-                .navigationBarTitleDisplayMode(.inline)
-                .frame(maxHeight: .infinity)
-                .navigationDestination(isPresented: $isShowingPaymentView) {
-                    PaymentView(viewModel: paymentViewModel, establishData: $checkoutViewModel.establishData).toolbarRole(.editor)
-                }
-                .navigationDestination(isPresented: $isShowingStatusView) {
-                    StatusView(statusViewModel: StatusViewModel(transaction: paymentViewModel.transaction)).toolbarRole(.editor)
-                }
+                    } label: {
+                        Text("Place order")
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.ui.checkoutButton)
+                            .border(Color.ui.checkoutButton)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding()
+                    }.disabled(checkoutViewModel.disableCheckout())
+                    
+                }.listRowSeparator(.hidden)
+            }.listStyle(.plain)
+            
+        }.navigationBarTitle("Purchase sneakers")
+            .navigationBarTitleDisplayMode(.inline)
+            .frame(maxHeight: .infinity)
+            .navigationDestination(isPresented: $isShowingPaymentView) {
+                PaymentView(viewModel: paymentViewModel, establishData: $checkoutViewModel.establishData).toolbarRole(.editor)
+            }
+            .navigationDestination(isPresented: $isShowingStatusView) {
+                StatusView(statusViewModel: StatusViewModel(transaction: paymentViewModel.transaction)).toolbarRole(.editor)
+            }.onAppear {
+                checkoutViewModel.updateEstablishWithValue()
+            }
 
-        }.onAppear {
-            checkoutViewModel.updateEstablishWithValue()
-        }
     }
 
 }

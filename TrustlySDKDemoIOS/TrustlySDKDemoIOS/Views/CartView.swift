@@ -10,47 +10,49 @@ import SwiftUI
 struct CartView<ViewModel>: View where ViewModel: ProductViewModelProtocol {
     
     @EnvironmentObject var viewModel: ViewModel
+    @State private var isShowingCheckoutView = false
     
     var body: some View {
         
-        NavigationStack {
-            VStack(alignment: .leading){
-                HeaderView(title: "Shopping cart", imageName: "logo")
-                
-                List($viewModel.selectedProducts){ $product in
-                    ProductCellView(product: $product, cellType: .cart).listRowSeparator(.hidden)
-                    
-                }.listStyle(.plain)
-                
-                Divider()
-                
-                HStack{
-                    Text("Subtotal:")
-                    Spacer()
-                    Text(self.viewModel.calculateSubTotal().toCurrencyFormat())
-                }.padding()
-                
-                NavigationLink{
-                    CheckoutView(checkoutViewModel: CheckoutViewModel(products: viewModel.selectedProducts),
-                                 paymentViewModel: PaymentViewModel()
-                    ).toolbarRole(.editor)
-                } label: {
-                    Text("Go to checkout")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.ui.checkoutButton)
-                        .border(Color.ui.checkoutButton)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
-                    
-                }
-            }.navigationBarTitle("Purchase sneakers")
-                .navigationBarTitleDisplayMode(.inline)
+        VStack(alignment: .leading){
+            HeaderView(title: "Shopping cart", imageName: "logo")
             
-        }.onAppear {
-            self.viewModel.fetchSelectedProducts()
-        }
+            List($viewModel.selectedProducts){ $product in
+                ProductCellView(product: $product, cellType: .cart).listRowSeparator(.hidden)
+                
+            }.listStyle(.plain)
+            
+            Divider()
+            
+            HStack{
+                Text("Subtotal:")
+                Spacer()
+                Text(self.viewModel.calculateSubTotal().toCurrencyFormat())
+            }.padding()
+            
+            Button {
+                isShowingCheckoutView.toggle()
+                
+            } label: {
+                Text("Go to checkout")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.ui.checkoutButton)
+                    .border(Color.ui.checkoutButton)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding()
+            }
+            
+        }.navigationBarTitle("Purchase sneakers")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(isPresented: $isShowingCheckoutView) {
+                CheckoutView(checkoutViewModel: CheckoutViewModel(products: viewModel.selectedProducts),
+                             paymentViewModel: PaymentViewModel()
+                ).toolbarRole(.editor)
+            }.onAppear {
+                self.viewModel.fetchSelectedProducts()
+            }
             
     }
 }

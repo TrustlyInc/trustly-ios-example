@@ -40,11 +40,9 @@ struct ProductsListView<ViewModel>: View where ViewModel: ProductViewModelProtoc
 
             }.navigationBarTitle("Purchase sneakers")
                 .navigationBarTitleDisplayMode(.inline)
-            
-            NavigationLink(destination: CartView<ViewModel>().toolbarRole(.editor), isActive: $isShowingCartView) {
-                EmptyView()
-                
-            }
+                .navigationDestination(isPresented: $isShowingCartView) {
+                    CartView<ViewModel>().toolbarRole(.editor)
+                }
                 
         }.onAppear{
             viewModel.fetchProducts()

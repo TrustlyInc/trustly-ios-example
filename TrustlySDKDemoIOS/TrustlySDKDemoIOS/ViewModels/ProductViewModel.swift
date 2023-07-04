@@ -23,8 +23,9 @@ class ProductViewModel: ProductViewModelProtocol {
     @Published var selectedProducts: [Product] = [Product]()
         
     func fetchProducts() {
-        self.products = getAllProducts()
-        
+        if products.count <= 0 {
+            self.products = getAllProducts()
+        }
     }
     
     func fetchSelectedProducts() {

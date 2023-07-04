@@ -33,6 +33,9 @@
 		15B45DAD2A42153C002C6EC8 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B45DAC2A42153C002C6EC8 /* ProductViewModel.swift */; };
 		15CA83782A45D935003D3288 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA83772A45D935003D3288 /* CheckoutViewModel.swift */; };
 		15F860EA58CA9CDB60EBEEE4 /* Pods_TrustlySDKDemoIOS_TrustlySDKDemoIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF62CD721F1642667F55863A /* Pods_TrustlySDKDemoIOS_TrustlySDKDemoIOSUITests.framework */; };
+		15FAF1922A54327900C17952 /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF1912A54327900C17952 /* JSONUtils.swift */; };
+		15FAF1952A54400800C17952 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 15FAF1942A54400800C17952 /* products.json */; };
+		15FAF1982A54418600C17952 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FAF1972A54418600C17952 /* ProductService.swift */; };
 		C186139CE73F54E94A5F9FBB /* Pods_TrustlySDKDemoIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111529663D46A6DF3F177681 /* Pods_TrustlySDKDemoIOSTests.framework */; };
 		DB8094C3516C575F33265175 /* Pods_TrustlySDKDemoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB4C75D34A507C4EE274E71 /* Pods_TrustlySDKDemoIOS.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +89,9 @@
 		15A2A3762A3CB5B6007F22A4 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		15B45DAC2A42153C002C6EC8 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		15CA83772A45D935003D3288 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
+		15FAF1912A54327900C17952 /* JSONUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
+		15FAF1942A54400800C17952 /* products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		15FAF1972A54418600C17952 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		641713521AD660F1D917E1B5 /* Pods-TrustlySDKDemoIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOSTests/Pods-TrustlySDKDemoIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C9C7D3B4B19AED904C3E306 /* Pods-TrustlySDKDemoIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOS.debug.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOS/Pods-TrustlySDKDemoIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AE26770D126CC1294958BA45 /* Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests/Pods-TrustlySDKDemoIOS-TrustlySDKDemoIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +154,10 @@
 		154925C32A37BC4B00D39D9B /* TrustlySDKDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
+				15FAF1932A543FB100C17952 /* resources */,
 				1583E8812A5301AD002BC0D1 /* Info.plist */,
+				15FAF1902A54326100C17952 /* Utils */,
+				15FAF1962A54416600C17952 /* Services */,
 				15B45DAB2A421521002C6EC8 /* ViewModels */,
 				15A2A3752A3CB59C007F22A4 /* Extensions */,
 				15A2A3702A3B58D6007F22A4 /* Models */,
@@ -230,6 +239,30 @@
 				1599E8422A49BA1C004BAB03 /* PaymentViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		15FAF1902A54326100C17952 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15FAF1912A54327900C17952 /* JSONUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15FAF1932A543FB100C17952 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				15FAF1942A54400800C17952 /* products.json */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		15FAF1962A54416600C17952 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				15FAF1972A54418600C17952 /* ProductService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5BFD838DADACA7FC6CD3879B /* Frameworks */ = {
@@ -366,6 +399,7 @@
 			files = (
 				154925CC2A37BC4C00D39D9B /* Preview Assets.xcassets in Resources */,
 				154925C92A37BC4C00D39D9B /* Assets.xcassets in Resources */,
+				15FAF1952A54400800C17952 /* products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +534,7 @@
 				15A2A36F2A3B5851007F22A4 /* ProductCellView.swift in Sources */,
 				15A2A36D2A3B54AF007F22A4 /* CartView.swift in Sources */,
 				159DD6D32A4B2A3600EC3E17 /* PaymentMethodView.swift in Sources */,
+				15FAF1922A54327900C17952 /* JSONUtils.swift in Sources */,
 				15A2A3742A3CA3D6007F22A4 /* ProductsListView.swift in Sources */,
 				1599E8452A49BAE6004BAB03 /* Transaction.swift in Sources */,
 				1599E8412A49B6AC004BAB03 /* TransactionDetailView.swift in Sources */,
@@ -511,6 +546,7 @@
 				150F7C062A3CFADD003AD5B0 /* HeaderView.swift in Sources */,
 				15A2A3772A3CB5B6007F22A4 /* DoubleExtensions.swift in Sources */,
 				15A2A3722A3B5902007F22A4 /* Product.swift in Sources */,
+				15FAF1982A54418600C17952 /* ProductService.swift in Sources */,
 				150F7C022A3CF5F0003AD5B0 /* CheckoutView.swift in Sources */,
 				154925C52A37BC4B00D39D9B /* TrustlySDKDemoIOSApp.swift in Sources */,
 			);

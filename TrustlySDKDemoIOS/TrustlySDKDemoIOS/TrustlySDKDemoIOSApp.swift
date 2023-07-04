@@ -14,4 +14,15 @@ struct TrustlySDKDemoIOSApp: App {
             ProductsListView(viewModel: ProductViewModel())
         }
     }
+
+    init(){
+        let coloredAppearance = UINavigationBarAppearance()
+        
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+
+        let image = UIImage(systemName: "chevron.backward")?.withTintColor(UIColor.black, renderingMode: .alwaysOriginal)
+        coloredAppearance.setBackIndicatorImage(image, transitionMaskImage: image)
+    }
 }

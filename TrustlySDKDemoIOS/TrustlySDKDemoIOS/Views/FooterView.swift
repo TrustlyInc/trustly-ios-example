@@ -39,7 +39,7 @@ struct FooterView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 0, price: 90.0)]
+        let productsList = [Product(id: "14", title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 0, price: 90.0)]
 
         FooterView(viewModel: CheckoutViewModel(products: productsList)).previewLayout(.sizeThatFits)
     }

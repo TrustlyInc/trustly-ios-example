@@ -73,7 +73,7 @@ struct ProductCellView: View, Identifiable {
 
 struct ProductCellView_Previews: PreviewProvider {
     static var previews: some View {
-        @State var product = Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 0, price: 90.0)
+        @State var product = Product(id: "14", title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 0, price: 90.0)
         ProductCellView(product: $product, cellType: .catalog).previewLayout(.fixed(width: 300, height: 100))
     }
 }

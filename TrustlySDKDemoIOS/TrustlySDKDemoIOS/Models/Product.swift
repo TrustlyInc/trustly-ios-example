@@ -8,8 +8,8 @@
 import Foundation
 
 
-struct Product: Hashable, Identifiable {
-    var id = UUID()
+struct Product: Hashable, Identifiable, Codable {
+    var id: String
     let title: String
     let description: String
     let image: String

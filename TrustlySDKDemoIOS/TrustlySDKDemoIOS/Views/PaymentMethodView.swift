@@ -63,7 +63,7 @@ struct PaymentMethodView<ViewModel>: View where ViewModel: CheckoutViewModelProt
 
 struct PaymentMethodView_Previews: PreviewProvider {
     static var previews: some View {
-        let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
+        let productsList = [Product(id: "14", title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
         
         PaymentMethodView(viewModel: CheckoutViewModel(products: productsList), paymentAuthorized: true)
 

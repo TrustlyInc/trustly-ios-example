@@ -73,7 +73,7 @@ struct TransactionDetailView<ViewModel>: View where ViewModel: StatusViewModelPr
                                 .foregroundColor(Color.ui.transactionLabel)
                                 .multilineTextAlignment(.center)
                             Spacer()
-                            Text(transaction.paymentId ?? "")
+                            Text(transaction.panel)
                                 .font(.custom("Open Sans", size: 16.0))
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.ui.transactionText)

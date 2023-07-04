@@ -100,7 +100,7 @@ extension TrustlyRepresentedView {
 }
 
 struct TrustlyView_Previews: PreviewProvider {
-    static let productsList = [Product(title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
+    static let productsList = [Product(id: "14", title: "Prime Ultraspeed Stunt", description: "Size 10.5", image:"product", quantity: 2, price: 90.0)]
     
     @State static var establishData: Dictionary<AnyHashable,Any> = [:]
     

@@ -1,22 +1,5 @@
-/*  ___________________________________________________________________________________________________________
- *
- *    TRUSTLY CONFIDENTIAL AND PROPRIETARY INFORMATION
- *  ___________________________________________________________________________________________________________
- *
- *      Copyright (c) 2012 - 2020 Trustly
- *      All Rights Reserved.
- *
- *   NOTICE:  All information contained herein is, and remains, the confidential and proprietary property of
- *   Trustly and its suppliers, if any. The intellectual and technical concepts contained herein are the
- *   confidential and proprietary property of Trustly and its suppliers and  may be covered by U.S. and
- *   Foreign Patents, patents in process, and are protected by trade secret or copyright law. Dissemination of
- *   this information or reproduction of this material is strictly forbidden unless prior written permission is
- *   obtained from Trustly.
- *   ___________________________________________________________________________________________________________
-*/
-
 import UIKit
-import PayWithMyBank
+import TrustlySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -66,6 +49,6 @@ extension AppDelegate {
 }
 
 extension Notification.Name{
-    static let trustlyCloseWebview = Notification.Name(PayWithMyBankView.trustlyCloseWebview)
+    static let trustlyCloseWebview = Notification.Name(TrustlyView.trustlyCloseWebview)
 
 }

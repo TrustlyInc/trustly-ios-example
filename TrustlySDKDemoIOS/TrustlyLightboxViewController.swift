@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import PayWithMyBank
+import TrustlySDK
 
 protocol TrustlyLightboxViewProtocol {
     func onReturnWithTransactionId(transactionId: String, controller: TrustlyLightboxViewController)
@@ -22,7 +22,7 @@ class TrustlyLightboxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let trustlyLightboxPanel = PayWithMyBankView()
+        let trustlyLightboxPanel = TrustlyView()
                 
         self.view = trustlyLightboxPanel.establish(self.establishData , onReturn: {(payWithMyBank, returnParameters)->Void in
                 let response = returnParameters as! [String:String]

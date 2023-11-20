@@ -28,16 +28,12 @@ class MerchantViewController: UIViewController {
         ]
         
         self.trustlyView.onChangeListener { (eventName, attributes) in
-            if let event = eventName, let data = attributes {
-                print("onChangeListener: \(event) \(data)")
-            }
+            print("onChangeListener: \(eventName) \(attributes)")
         }
 
-        self.trustlyView.selectBankWidget(establishData) { (view, data) in
-            if let data = data {
-                print("returnParameters:\(data)")
-                self.establishData = data
-            }
+        self.trustlyView.selectBankWidget(establishData: establishData) { (view, data) in
+            print("returnParameters:\(data)")
+            self.establishData = data
         }
 
     }

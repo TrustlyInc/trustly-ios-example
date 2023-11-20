@@ -16,7 +16,7 @@ protocol TrustlyLightboxViewProtocol {
 
 class TrustlyLightboxViewController: UIViewController {
     
-    var establishData:Dictionary<AnyHashable,Any>?
+    var establishData:Dictionary<AnyHashable,Any> = [:]
     var delegate: TrustlyLightboxViewProtocol?
     
     override func viewDidLoad() {
@@ -24,13 +24,14 @@ class TrustlyLightboxViewController: UIViewController {
         
         let trustlyLightboxPanel = TrustlyView()
                 
-        self.view = trustlyLightboxPanel.establish(self.establishData , onReturn: {(payWithMyBank, returnParameters)->Void in
-                let response = returnParameters as! [String:String]
-                self.delegate?.onReturnWithTransactionId(transactionId: response["transactionId"]!, controller: self)
+        self.view = trustlyLightboxPanel.establish(establishData: establishData,
+                                                   onReturn: {(trustlyView, returnParameters)->Void in
+            let response = returnParameters as! [String:String]
+            self.delegate?.onReturnWithTransactionId(transactionId: response["transactionId"]!, controller: self)
             
-            }, onCancel: {(payWithMyBank, returnParameters)->Void in
-                let response = returnParameters as! [String:String]
-                self.delegate?.onCancelWithTransactionId(transactionId: response["transactionId"]!, controller: self)
+        }, onCancel: {(payWithMyBank, returnParameters)->Void in
+            let response = returnParameters as! [String:String]
+            self.delegate?.onCancelWithTransactionId(transactionId: response["transactionId"]!, controller: self)
         })
         
     }

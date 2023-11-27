@@ -93,6 +93,8 @@
 			dependencies = (
 			);
 			name = TrustlySDKDemoIOS;
+			packageProductDependencies = (
+			);
 			productName = SwiftDemo;
 			productReference = 004E98D92585F61900B44317 /* TrustlySDKDemoIOS.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +122,8 @@
 				Base,
 			);
 			mainGroup = 004E98D02585F61900B44317;
+			packageReferences = (
+			);
 			productRefGroup = 004E98DA2585F61900B44317 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,7 +305,7 @@
 				CODE_SIGN_ENTITLEMENTS = TrustlySDKDemoIOS/TrustlySDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QQ8ZHB7RDV;
+				DEVELOPMENT_TEAM = 935WTYE9VM;
 				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +327,7 @@
 				CODE_SIGN_ENTITLEMENTS = TrustlySDKDemoIOS/TrustlySDKDemoIOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QQ8ZHB7RDV;
+				DEVELOPMENT_TEAM = 935WTYE9VM;
 				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

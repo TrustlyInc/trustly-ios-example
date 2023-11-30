@@ -13,6 +13,8 @@
 		004E98E62585F61A00B44317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E52585F61A00B44317 /* Assets.xcassets */; };
 		004E98E92585F61A00B44317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E72585F61A00B44317 /* LaunchScreen.storyboard */; };
 		159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */; };
+		15D644F52B18D094009234A0 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644F42B18D094009234A0 /* BaseAPI.swift */; };
+		15D644F72B18D0A5009234A0 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644F62B18D0A5009234A0 /* TargetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		004E98EA2585F61A00B44317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrustlySDKDemoIOS.entitlements; sourceTree = "<group>"; };
 		159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlyLightboxViewController.swift; sourceTree = "<group>"; };
+		15D644F42B18D094009234A0 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		15D644F62B18D0A5009234A0 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		004E98DB2585F61900B44317 /* TrustlySDKDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
+				15D644F32B18D07A009234A0 /* Network */,
 				004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */,
 				004E98DC2585F61900B44317 /* AppDelegate.swift */,
 				004E98E02585F61900B44317 /* MerchantViewController.swift */,
@@ -75,6 +80,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15D644F32B18D07A009234A0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				15D644F42B18D094009234A0 /* BaseAPI.swift */,
+				15D644F62B18D0A5009234A0 /* TargetType.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15D644F72B18D0A5009234A0 /* TargetType.swift in Sources */,
 				159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */,
+				15D644F52B18D094009234A0 /* BaseAPI.swift in Sources */,
 				004E98E12585F61900B44317 /* MerchantViewController.swift in Sources */,
 				004E98DD2585F61900B44317 /* AppDelegate.swift in Sources */,
 			);

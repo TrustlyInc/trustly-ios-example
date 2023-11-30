@@ -16,11 +16,42 @@ protocol TrustlyLightboxViewProtocol {
 
 class TrustlyLightboxViewController: UIViewController {
     
+    let signatureApi = SignatureAPI()
     var establishData:Dictionary<AnyHashable,Any> = [:]
     var delegate: TrustlyLightboxViewProtocol?
     
+    var spinner = UIActivityIndicatorView(style: .whiteLarge)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.showSpinner()
+        
+        self.updateEstablishWithRequestSignature()
+                
+    }
+    
+    func showSpinner(_ show: Bool = true) {
+        
+        if show {
+            self.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
+            
+            spinner.translatesAutoresizingMaskIntoConstraints = false
+            spinner.startAnimating()
+            self.view.addSubview(spinner)
+            
+            spinner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            spinner.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+            
+        } else {
+            self.view.backgroundColor = UIColor.systemBackground
+            spinner.removeFromSuperview()
+        }
+
+    }
+    
+    private func buildLightbox() {
+        self.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
         
         let trustlyLightboxPanel = TrustlyView()
                 
@@ -34,6 +65,26 @@ class TrustlyLightboxViewController: UIViewController {
             self.delegate?.onCancelWithTransactionId(transactionId: response["transactionId"]!, controller: self)
         })
         
+        self.showSpinner(false)
     }
     
+}
+
+//MARK: Network extension
+extension TrustlyLightboxViewController {
+    
+    func updateEstablishWithRequestSignature() {
+        
+        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
+            do {
+                try self.establishData["requestSignature"] = result.get()
+                print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
+                
+                self.buildLightbox()
+                
+            } catch {
+                print("Error trying to get requestSignature")
+            }
+        }
+    }
 }

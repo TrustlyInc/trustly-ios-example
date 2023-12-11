@@ -21,6 +21,7 @@ class TrustlyLightboxViewController: UIViewController {
     var delegate: TrustlyLightboxViewProtocol?
     
     var spinner = UIActivityIndicatorView(style: .whiteLarge)
+    var spinner = UIActivityIndicatorView(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()

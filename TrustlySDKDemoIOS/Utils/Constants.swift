@@ -6,6 +6,6 @@
 //
 
 struct Constants {
-    static let BASE_URL = "https://shop-on-merchant.fly.dev"
+    static let BASE_URL = "<YOUR BACKEND URL>"
 
 }

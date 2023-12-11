@@ -6,41 +6,11 @@ This example app provides a simple integration of the Trustly Lightbox iOS SDK i
 
 - clone
 - open project
-- Install Trustly SDK - This can be done 3 ways
+- Install Trustly SDK - This can be done 2 ways
     - Cocoapods
     - Swift Package Manager
-    - Manually Download
 
 <br />
-
-<details>
-<summary>Download and install manually</summary>
-<br />
-Clone the project to your local environment
-
-```sh
-git clone git@github.com:TrustlyInc/trustly-ios-example.git
-````
-
-- With Xcode running, open the **TrustlySDKDemoIOS.xcodeproj** file inside this repository
-- Download the latest version of the [PayWithMyBank iOS SDK](https://repo.paywithmybank.com/Specs/paywithmybank-ios-sdk/)
-- Extract the downloaded files in your local environment
-- From xCode:
-    1. Select the project
-    2. Select the target
-    3. In the `Framework, Libraries, and Embedded Content` click in `+` button;
-    ![xCode](resources/xCode.png "xCode")
-
-    4. In the pop-up window click in `Add Other...` drop down, and click in `Add files...`
-    ![frameworks](resources/frameworks.png "frameworks")
-
-    5. Go to the directory where you extracted the SDK from the downloaded file and select `PayWithMyBank.xcframework`
-    ![chooseFramework](resources/chooseFramework.png "chooseFramework")
-
-    6. If the framework appears in your project successfully, you are ready to build the app
-    ![frameworkImported](resources/frameworkImported.png "frameworkImported")
-
-</details>
 
 <details>
 <summary>Cocoapods</summary>

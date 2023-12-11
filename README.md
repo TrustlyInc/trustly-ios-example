@@ -53,27 +53,35 @@ Note that the application has a URL Scheme configured in order for the app to ha
 As the Trustly Lightbox SDK runs on the client, requests between it and the Trustly API must be secured. Calculate a requestSignature using your Access Key from your server and fetch it from your iOS app prior to rendering the Trustly Lightbox. For more information read the section `Define Establish Data with a Request Signature` in this [documentation](https://amer.developers.trustly.com/payments/docs/ios-quickstart#define-establish-data-with-a-request-signature), and check the code snipets bellow in the `TrustlyLightboxViewController.swift` file.
 
 ```swift
+        ...
+
         /* Uncomment this function only if your merchant setup has the "Extended Security" enable in Admin console, and uncomment the code between the lines
         79-93 */
-        //self.updateEstablishWithRequestSignature()
+        self.updateEstablishWithRequestSignature()
+
+        ...
 ```
 
 ```swift
+    ...
+
     /* Uncomment this fuction if your merchant setup has the "Extended Security" enable in Admin console,
        and if did you alredy iimplemented in your backend the generate Request Signature endpoint.
     */
-//    func updateEstablishWithRequestSignature() {
-//        
-//        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
-//            do {
-//                try self.establishData["requestSignature"] = result.get()
-//                print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
-//                
-//                self.buildLightbox()
-//                
-//            } catch {
-//                print("Error trying to get requestSignature")
-//            }
-//        }
-//    }
+    func updateEstablishWithRequestSignature() {
+        
+        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
+            do {
+                try self.establishData["requestSignature"] = result.get()
+                print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
+                
+                self.buildLightbox()
+                
+            } catch {
+                print("Error trying to get requestSignature")
+            }
+        }
+    }
+
+    ...
 ```

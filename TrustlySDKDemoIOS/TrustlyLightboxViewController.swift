@@ -20,15 +20,15 @@ class TrustlyLightboxViewController: UIViewController {
     var establishData:Dictionary<AnyHashable,Any> = [:]
     var delegate: TrustlyLightboxViewProtocol?
     
-    var spinner = UIActivityIndicatorView(style: .whiteLarge)
     var spinner = UIActivityIndicatorView(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.showSpinner()
-        
-        self.updateEstablishWithRequestSignature()
+        /* Uncomment this function only if your merchant setup has the "Extended Security" enable in Admin console, and uncomment the code between the lines
+        79-93 */
+        //self.updateEstablishWithRequestSignature()
                 
     }
     
@@ -73,19 +73,22 @@ class TrustlyLightboxViewController: UIViewController {
 
 //MARK: Network extension
 extension TrustlyLightboxViewController {
-    
-    func updateEstablishWithRequestSignature() {
-        
-        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
-            do {
-                try self.establishData["requestSignature"] = result.get()
-                print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
-                
-                self.buildLightbox()
-                
-            } catch {
-                print("Error trying to get requestSignature")
-            }
-        }
-    }
+
+    /* Uncomment this fuction if your merchant setup has the "Extended Security" enable in Admin console,
+       and if did you alredy iimplemented in your backend the generate Request Signature endpoint.
+    */
+//    func updateEstablishWithRequestSignature() {
+//        
+//        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
+//            do {
+//                try self.establishData["requestSignature"] = result.get()
+//                print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
+//                
+//                self.buildLightbox()
+//                
+//            } catch {
+//                print("Error trying to get requestSignature")
+//            }
+//        }
+//    }
 }

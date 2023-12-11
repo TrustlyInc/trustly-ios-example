@@ -16,7 +16,7 @@ protocol TrustlyLightboxViewProtocol {
 
 class TrustlyLightboxViewController: UIViewController {
     
-    let signatureApi = SignatureAPI()
+    let signatureApi = RequestSignatureAPI()
     var establishData:Dictionary<AnyHashable,Any> = [:]
     var delegate: TrustlyLightboxViewProtocol?
     

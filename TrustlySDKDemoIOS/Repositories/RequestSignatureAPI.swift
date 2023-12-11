@@ -1,5 +1,5 @@
 //
-//  SignatureAPI.swift
+//  RequestSignatureAPI.swift
 //  TrustlySDKDemoIOS
 //
 //  Created by Marcos Rivereto on 30/11/23.
@@ -12,7 +12,7 @@ protocol SignatureAPIProtocol {
 }
 
 
-class SignatureAPI: BaseAPI<RepositoriesNetworking>, SignatureAPIProtocol {
+class RequestSignatureAPI: BaseAPI<RepositoriesNetworking>, SignatureAPIProtocol {
     
     func generateRequestSignatureFor(establishData: Dictionary<AnyHashable, Any>, completionHandler: @escaping (Result<String, NSError>) -> Void) {
         self.fetchData(target: .postRequestSignature(establishData: establishData)) { (result) in

@@ -85,3 +85,7 @@ As the Trustly Lightbox SDK runs on the client, requests between it and the Trus
 
     ...
 ```
+
+# Server Side Features
+
+This example project can be run entirely as a frontend app in order to quickly test basic Trustly functions. However, your application will likely require backend integration with Trustly as well. Check out our [trustly-nestjs-example](https://github.com/TrustlyInc/trustly-nestjs-example) project to learn more and follow the steps below to integrate it with this app.

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,14 @@
 		004E98E42585F61900B44317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E22585F61900B44317 /* Main.storyboard */; };
 		004E98E62585F61A00B44317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E52585F61A00B44317 /* Assets.xcassets */; };
 		004E98E92585F61A00B44317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004E98E72585F61A00B44317 /* LaunchScreen.storyboard */; };
+		154BEF5E2B2341C600CDE844 /* TrustlySDK in Frameworks */ = {isa = PBXBuildFile; productRef = 154BEF5D2B2341C600CDE844 /* TrustlySDK */; };
 		159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */; };
+		15D644F52B18D094009234A0 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644F42B18D094009234A0 /* BaseAPI.swift */; };
+		15D644F72B18D0A5009234A0 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644F62B18D0A5009234A0 /* TargetType.swift */; };
+		15D644FA2B18D222009234A0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 15D644F92B18D222009234A0 /* Alamofire */; };
+		15D644FD2B18D2CE009234A0 /* RepositoriesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644FC2B18D2CE009234A0 /* RepositoriesNetworking.swift */; };
+		15D644FF2B18D35A009234A0 /* RequestSignatureAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644FE2B18D35A009234A0 /* RequestSignatureAPI.swift */; };
+		15D645032B18D603009234A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D645022B18D603009234A0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +32,11 @@
 		004E98EA2585F61A00B44317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrustlySDKDemoIOS.entitlements; sourceTree = "<group>"; };
 		159587A72971DB1F000B1256 /* TrustlyLightboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustlyLightboxViewController.swift; sourceTree = "<group>"; };
+		15D644F42B18D094009234A0 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		15D644F62B18D0A5009234A0 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		15D644FC2B18D2CE009234A0 /* RepositoriesNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesNetworking.swift; sourceTree = "<group>"; };
+		15D644FE2B18D35A009234A0 /* RequestSignatureAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSignatureAPI.swift; sourceTree = "<group>"; };
+		15D645022B18D603009234A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15D644FA2B18D222009234A0 /* Alamofire in Frameworks */,
+				154BEF5E2B2341C600CDE844 /* TrustlySDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +72,9 @@
 		004E98DB2585F61900B44317 /* TrustlySDKDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
+				15D644F32B18D07A009234A0 /* Network */,
+				15D644FB2B18D288009234A0 /* Repositories */,
+				15D645012B18D5EF009234A0 /* Utils */,
 				004E99062586F0B000B44317 /* TrustlySDKDemoIOS.entitlements */,
 				004E98DC2585F61900B44317 /* AppDelegate.swift */,
 				004E98E02585F61900B44317 /* MerchantViewController.swift */,
@@ -77,6 +94,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		15D644F32B18D07A009234A0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				15D644F42B18D094009234A0 /* BaseAPI.swift */,
+				15D644F62B18D0A5009234A0 /* TargetType.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		15D644FB2B18D288009234A0 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				15D644FC2B18D2CE009234A0 /* RepositoriesNetworking.swift */,
+				15D644FE2B18D35A009234A0 /* RequestSignatureAPI.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		15D645012B18D5EF009234A0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15D645022B18D603009234A0 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +137,8 @@
 			);
 			name = TrustlySDKDemoIOS;
 			packageProductDependencies = (
+				15D644F92B18D222009234A0 /* Alamofire */,
+				154BEF5D2B2341C600CDE844 /* TrustlySDK */,
 			);
 			productName = SwiftDemo;
 			productReference = 004E98D92585F61900B44317 /* TrustlySDKDemoIOS.app */;
@@ -123,6 +168,8 @@
 			);
 			mainGroup = 004E98D02585F61900B44317;
 			packageReferences = (
+				15D644F82B18D222009234A0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				154BEF5C2B2341C600CDE844 /* XCRemoteSwiftPackageReference "trustly-ios" */,
 			);
 			productRefGroup = 004E98DA2585F61900B44317 /* Products */;
 			projectDirPath = "";
@@ -151,9 +198,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15D644F72B18D0A5009234A0 /* TargetType.swift in Sources */,
 				159587A82971DB1F000B1256 /* TrustlyLightboxViewController.swift in Sources */,
+				15D644FF2B18D35A009234A0 /* RequestSignatureAPI.swift in Sources */,
+				15D644F52B18D094009234A0 /* BaseAPI.swift in Sources */,
 				004E98E12585F61900B44317 /* MerchantViewController.swift in Sources */,
 				004E98DD2585F61900B44317 /* AppDelegate.swift in Sources */,
+				15D644FD2B18D2CE009234A0 /* RepositoriesNetworking.swift in Sources */,
+				15D645032B18D603009234A0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +359,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 935WTYE9VM;
 				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 935WTYE9VM;
 				INFOPLIST_FILE = TrustlySDKDemoIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +417,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		154BEF5C2B2341C600CDE844 /* XCRemoteSwiftPackageReference "trustly-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TrustlyInc/trustly-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+		15D644F82B18D222009234A0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		154BEF5D2B2341C600CDE844 /* TrustlySDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 154BEF5C2B2341C600CDE844 /* XCRemoteSwiftPackageReference "trustly-ios" */;
+			productName = TrustlySDK;
+		};
+		15D644F92B18D222009234A0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15D644F82B18D222009234A0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 004E98D12585F61900B44317 /* Project object */;
 }

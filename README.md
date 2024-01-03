@@ -6,41 +6,11 @@ This example app provides a simple integration of the Trustly Lightbox iOS SDK i
 
 - clone
 - open project
-- Install Trustly SDK - This can be done 3 ways
+- Install Trustly SDK - This can be done 2 ways
     - Cocoapods
     - Swift Package Manager
-    - Manually Download
 
 <br />
-
-<details>
-<summary>Download and install manually</summary>
-<br />
-Clone the project to your local environment
-
-```sh
-git clone git@github.com:TrustlyInc/trustly-ios-example.git
-````
-
-- With Xcode running, open the **TrustlySDKDemoIOS.xcodeproj** file inside this repository
-- Download the latest version of the [PayWithMyBank iOS SDK](https://repo.paywithmybank.com/Specs/paywithmybank-ios-sdk/)
-- Extract the downloaded files in your local environment
-- From xCode:
-    1. Select the project
-    2. Select the target
-    3. In the `Framework, Libraries, and Embedded Content` click in `+` button;
-    ![xCode](resources/xCode.png "xCode")
-
-    4. In the pop-up window click in `Add Other...` drop down, and click in `Add files...`
-    ![frameworks](resources/frameworks.png "frameworks")
-
-    5. Go to the directory where you extracted the SDK from the downloaded file and select `PayWithMyBank.xcframework`
-    ![chooseFramework](resources/chooseFramework.png "chooseFramework")
-
-    6. If the framework appears in your project successfully, you are ready to build the app
-    ![frameworkImported](resources/frameworkImported.png "frameworkImported")
-
-</details>
 
 <details>
 <summary>Cocoapods</summary>
@@ -74,10 +44,48 @@ For production choose the `main` branch, but in order to develop or test against
 
 # Implementation Notes
 
-*****
-
 In the `MerchantViewController` file, you will find a controller simulating the a merchant app screen. This controller will call the `TrustlyLightboxViewController` class, and this class will be responsible to call the `PayWithMyBank SDK`.
 
 Note that the application has a URL Scheme configured in order for the app to have a Deep Link of `demoapp://`. A Deep Link is required for a successful Trustly Lightbox integration within a mobile app.
 
+# Define Establish Data with a Request Signature
 
+As the Trustly Lightbox SDK runs on the client, requests between it and the Trustly API must be secured. Calculate a requestSignature using your Access Key from your server and fetch it from your iOS app prior to rendering the Trustly Lightbox. For more information read the section `Define Establish Data with a Request Signature` in this [documentation](https://amer.developers.trustly.com/payments/docs/ios-quickstart#define-establish-data-with-a-request-signature), and check the code snipets bellow in the `TrustlyLightboxViewController.swift` file.
+
+```swift
+        ...
+
+        /* Uncomment this function only if your merchant setup has the "Extended Security" enable in Admin console, and uncomment the code between the lines
+        79-93 */
+        self.updateEstablishWithRequestSignature()
+
+        ...
+```
+
+```swift
+    ...
+
+    /* Uncomment this fuction if your merchant setup has the "Extended Security" enable in Admin console,
+       and if did you alredy iimplemented in your backend the generate Request Signature endpoint.
+    */
+    func updateEstablishWithRequestSignature() {
+        
+        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
+            do {
+                try self.establishData["requestSignature"] = result.get()
+                print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
+                
+                self.buildLightbox()
+                
+            } catch {
+                print("Error trying to get requestSignature")
+            }
+        }
+    }
+
+    ...
+```
+
+# Server Side Features
+
+This example project can be run entirely as a frontend app in order to quickly test basic Trustly functions. However, your application will likely require backend integration with Trustly as well. Check out our [trustly-nestjs-example](https://github.com/TrustlyInc/trustly-nestjs-example) project to learn more and follow the steps below to integrate it with this app.

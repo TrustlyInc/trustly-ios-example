@@ -26,12 +26,12 @@ class MerchantViewController: UIViewController {
             "metadata.integrationContext": "InAppBrowser",
             "env":"sandbox"
         ]
-        
+                
         self.trustlyView.onChangeListener { (eventName, attributes) in
             print("onChangeListener: \(eventName) \(attributes)")
         }
 
-        self.trustlyView.selectBankWidget(establishData: establishData) { (view, data) in
+        _ = self.trustlyView.selectBankWidget(establishData: establishData) { (view, data) in
             print("returnParameters:\(data)")
             self.establishData = data
         }

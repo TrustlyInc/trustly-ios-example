@@ -1,14 +1,14 @@
 # About
 
-This example app provides a simple integration of the Trustly Lightbox iOS SDK in a SwiftUI iOS app. 
+This example app provides a simple integration of the Trustly Lightbox iOS SDK in a SwiftUI iOS app.
 
 ## Getting Started
 
 - clone
 - open project
 - Install Trustly SDK - This can be done 2 ways
-    - Cocoapods
-    - Swift Package Manager
+  - Cocoapods
+  - Swift Package Manager
 
 <br />
 
@@ -24,9 +24,11 @@ pod 'TrustlySDK'
 ```
 
 In order to develop or test against an unreleased version of this SDK it is possible to install the pod from a branch of this repo:
+
 ```ruby
 pod 'TrustlySDK', :git => 'https://github.com/TrustlyInc/trustly-ios.git', :branch => '<BRANCH_NAME>'
 ```
+
 </details>
 
 <details>
@@ -38,9 +40,9 @@ TrustlySDK is available through [Swift Package Manager](https://www.swift.org/pa
 ![Add package url](resources/swift_package_manager.png)
 
 For production choose the `main` branch, but in order to develop or test against an unreleased version of this SDK choose the branch listed in the [release version table](#versions).
+
 </details>
 <br />
-
 
 # Implementation Notes
 
@@ -69,14 +71,14 @@ As the Trustly Lightbox SDK runs on the client, requests between it and the Trus
        and if did you alredy iimplemented in your backend the generate Request Signature endpoint.
     */
     func updateEstablishWithRequestSignature() {
-        
+
         signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
             do {
                 try self.establishData["requestSignature"] = result.get()
                 print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
-                
+
                 self.buildLightbox()
-                
+
             } catch {
                 print("Error trying to get requestSignature")
             }

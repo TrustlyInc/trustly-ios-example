@@ -1,14 +1,14 @@
 # About
 
-This example app provides a simple integration of the Trustly Lightbox iOS SDK in a SwiftUI iOS app. 
+This example app provides a simple integration of the Trustly Lightbox iOS SDK in a SwiftUI iOS app.
 
 ## Getting Started
 
 - clone
 - open project
 - Install Trustly SDK - This can be done 2 ways
-    - Cocoapods
-    - Swift Package Manager
+  - Cocoapods
+  - Swift Package Manager
 
 <br />
 
@@ -24,9 +24,11 @@ pod 'TrustlySDK'
 ```
 
 In order to develop or test against an unreleased version of this SDK it is possible to install the pod from a branch of this repo:
+
 ```ruby
 pod 'TrustlySDK', :git => 'https://github.com/TrustlyInc/trustly-ios.git', :branch => '<BRANCH_NAME>'
 ```
+
 </details>
 
 <details>
@@ -38,9 +40,9 @@ TrustlySDK is available through [Swift Package Manager](https://www.swift.org/pa
 ![Add package url](resources/swift_package_manager.png)
 
 For production choose the `main` branch, but in order to develop or test against an unreleased version of this SDK choose the branch listed in the [release version table](#versions).
+
 </details>
 <br />
-
 
 # Implementation Notes
 
@@ -69,14 +71,14 @@ As the Trustly Lightbox SDK runs on the client, requests between it and the Trus
        and if did you alredy iimplemented in your backend the generate Request Signature endpoint.
     */
     func updateEstablishWithRequestSignature() {
-        
+
         signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
             do {
                 try self.establishData["requestSignature"] = result.get()
                 print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
-                
+
                 self.buildLightbox()
-                
+
             } catch {
                 print("Error trying to get requestSignature")
             }
@@ -89,3 +91,9 @@ As the Trustly Lightbox SDK runs on the client, requests between it and the Trus
 # Server Side Features
 
 This example project can be run entirely as a frontend app in order to quickly test basic Trustly functions. However, your application will likely require backend integration with Trustly as well. Check out our [trustly-nestjs-example](https://github.com/TrustlyInc/trustly-nestjs-example) project to learn more and follow the steps below to integrate it with this app.
+
+# Contributing
+
+You can participate in this project by submitting bugs and feature requests in the [Issues](https://github.com/TrustlyInc/trustly-ios-example/issues) tab. Please, add [@lukevance](https://github.com/lukevance) as an assignee.
+
+If you are interested in fixing issues and contributing directly to the code base, feel free to open a Pull Request with your changes. Please, make sure to fulfill our [Pull Request Template](https://github.com/TrustlyInc/trustly-ios-example/blob/main/.github/pull_request_template.md) and add [@lukevance](https://github.com/lukevance) as code reviewer.

@@ -34,6 +34,7 @@ class MerchantViewController: UIViewController {
         _ = self.trustlyView.selectBankWidget(establishData: establishData) { (view, data) in
             print("returnParameters:\(data)")
             self.establishData = data
+            self.openLightbox()
         }
 
     }
@@ -42,9 +43,7 @@ class MerchantViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - IBActions
-    
-    @IBAction func pay(_ sender: Any) {
+    func openLightbox() {
         
         let trustlyLightboxViewController = TrustlyLightboxViewController()
         trustlyLightboxViewController.delegate = self

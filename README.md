@@ -87,6 +87,15 @@ As the Trustly Lightbox SDK runs on the client, requests between it and the Trus
 
     ...
 ```
+Also, in the file `Constants.swift`, change the variable `BASE_URL` with your backend path.
+```swift
+    ...
+
+    /* Change this variable to get the requestSignature in your backend */
+    static let BASE_URL = "<YOUR BACKEND URL>"
+
+    ...
+``` 
 
 # Server Side Features
 

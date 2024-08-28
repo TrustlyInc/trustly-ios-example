@@ -6,6 +6,6 @@
 //
 
 struct Constants {
+    /* Change this variable to get the requestSignature in your backend */
     static let BASE_URL = "<YOUR BACKEND URL>"
-
 }

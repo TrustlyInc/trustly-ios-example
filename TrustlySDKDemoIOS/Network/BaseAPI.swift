@@ -25,7 +25,7 @@ class BaseAPI<T:TargetType> {
                 case .success(let item):
                     completionHandler(.success(item))
                     
-                case .failure(let error):
+                case .failure(_):
                     completionHandler(.failure(NSError()))
                 }
                 
@@ -45,7 +45,7 @@ class BaseAPI<T:TargetType> {
                 case .success(let item):
                     completionHandler(.success(item))
                     
-                case .failure(let error):
+                case .failure(_):
                     completionHandler(.failure(NSError()))
                 }
             

@@ -22,6 +22,8 @@ class MerchantViewController: UIViewController {
             "amount": "0.00",
             "paymentType":"Deferred",
             "currency":"USD",
+            "customer.name": "John",
+            "customer.address.country": "US",
             "metadata.urlScheme": APP_DEEP_LINK,
             "metadata.integrationContext": "InAppBrowser",
             "env":"sandbox"

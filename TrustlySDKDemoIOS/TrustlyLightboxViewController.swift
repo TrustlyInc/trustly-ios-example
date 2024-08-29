@@ -25,11 +25,13 @@ class TrustlyLightboxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.showSpinner()
         /* Uncomment this function only if your merchant setup has the "Extended Security" enable in Admin console, and uncomment the code between the lines
-        79-93 */
-        //self.updateEstablishWithRequestSignature()
-                
+        84-96 */
+//        self.showSpinner()
+//        self.updateEstablishWithRequestSignature()
+        
+        /* Remove this line, if your merchant setup has the "Extended Security" enable in Admin console */
+        self.buildLightbox()
     }
     
     func showSpinner(_ show: Bool = true) {
@@ -37,8 +39,10 @@ class TrustlyLightboxViewController: UIViewController {
         if show {
             self.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
             
+            spinner.color = .white
             spinner.translatesAutoresizingMaskIntoConstraints = false
             spinner.startAnimating()
+            
             self.view.addSubview(spinner)
             
             spinner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -82,7 +86,6 @@ extension TrustlyLightboxViewController {
 //        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
 //            do {
 //                try self.establishData["requestSignature"] = result.get()
-//                print("generateRequestSignature - requestSignature: \(self.establishData["requestSignature"])")
 //                
 //                self.buildLightbox()
 //                

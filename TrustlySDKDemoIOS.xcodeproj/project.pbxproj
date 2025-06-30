@@ -20,6 +20,7 @@
 		15D644FD2B18D2CE009234A0 /* RepositoriesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644FC2B18D2CE009234A0 /* RepositoriesNetworking.swift */; };
 		15D644FF2B18D35A009234A0 /* RequestSignatureAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D644FE2B18D35A009234A0 /* RequestSignatureAPI.swift */; };
 		15D645032B18D603009234A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D645022B18D603009234A0 /* Constants.swift */; };
+		15FC1E2D2E1325A800950FA6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC1E2C2E1325A000950FA6 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		15D644FC2B18D2CE009234A0 /* RepositoriesNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesNetworking.swift; sourceTree = "<group>"; };
 		15D644FE2B18D35A009234A0 /* RequestSignatureAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSignatureAPI.swift; sourceTree = "<group>"; };
 		15D645022B18D603009234A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		15FC1E2C2E1325A000950FA6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		004E98DB2585F61900B44317 /* TrustlySDKDemoIOS */ = {
 			isa = PBXGroup;
 			children = (
+				15FC1E2B2E13259600950FA6 /* Views */,
 				15D644F32B18D07A009234A0 /* Network */,
 				15D644FB2B18D288009234A0 /* Repositories */,
 				15D645012B18D5EF009234A0 /* Utils */,
@@ -118,6 +121,14 @@
 				15D645022B18D603009234A0 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		15FC1E2B2E13259600950FA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15FC1E2C2E1325A000950FA6 /* BaseViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				15D644FF2B18D35A009234A0 /* RequestSignatureAPI.swift in Sources */,
 				15D644F52B18D094009234A0 /* BaseAPI.swift in Sources */,
 				004E98E12585F61900B44317 /* MerchantViewController.swift in Sources */,
+				15FC1E2D2E1325A800950FA6 /* BaseViewController.swift in Sources */,
 				004E98DD2585F61900B44317 /* AppDelegate.swift in Sources */,
 				15D644FD2B18D2CE009234A0 /* RepositoriesNetworking.swift in Sources */,
 				15D645032B18D603009234A0 /* Constants.swift in Sources */,

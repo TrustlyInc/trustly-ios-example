@@ -1,12 +1,14 @@
 import UIKit
 import TrustlySDK
 
-class MerchantViewController: UIViewController {
+class MerchantViewController: BaseViewController {
 
-    @IBOutlet weak var trustlyView: TrustlyView!
     @IBOutlet weak var amountTextView: UITextField!
+    
+    private let signatureApi = RequestSignatureAPI()
+    private var lightboxViewController: LightBoxViewController?
+    
     var establishData:Dictionary<AnyHashable,Any> = [:]
-    var trustlyPanel = TrustlyView()
     var MERCHANT_ID = "YOUR_MERCHANT_ID"
     var ACCESS_ID = "YOUR_ACCESS_ID"
     var APP_DEEP_LINK = "demoapp://"
@@ -28,16 +30,12 @@ class MerchantViewController: UIViewController {
             "metadata.integrationContext": "InAppBrowser",
             "env":"sandbox"
         ]
-                
-        self.trustlyView.onChangeListener { (eventName, attributes) in
-            print("onChangeListener: \(eventName) \(attributes)")
-        }
+        
+        let widgetVC = WidgetViewController(establishData: establishData)
+        widgetVC.delegate = self
 
-        _ = self.trustlyView.selectBankWidget(establishData: establishData) { (view, data) in
-            print("returnParameters:\(data)")
-            self.establishData = data
-            self.openLightbox()
-        }
+        widgetVC.view.frame = CGRect(x: 16, y: 220, width: 350, height: 500)
+        view.addSubview(widgetVC.view)
 
     }
 
@@ -46,31 +44,81 @@ class MerchantViewController: UIViewController {
     }
     
     func openLightbox() {
-        
-        let trustlyLightboxViewController = TrustlyLightboxViewController()
-        trustlyLightboxViewController.delegate = self
-
         if let amountText = amountTextView.text,
            let amount = Double(amountText) {
             
             establishData["amount"] = String(format: "%.2f", amount)
-            trustlyLightboxViewController.establishData = establishData
-            
-            self.present(trustlyLightboxViewController, animated: true)
+        } else {
+            establishData["amount"] = "0.00"
         }
+        
+        lightboxViewController = LightBoxViewController(establishData: establishData)
+        lightboxViewController?.delegate = self
+
+        self.present(lightboxViewController!, animated: true)
         
     }
     
 }
 
-extension MerchantViewController: TrustlyLightboxViewProtocol {
-    
-    func onReturnWithTransactionId(transactionId: String, controller: TrustlyLightboxViewController) {
-        controller.dismiss(animated: true)
-    }
-    
-    func onCancelWithTransactionId(transactionId: String, controller: TrustlyLightboxViewController) {
-        controller.dismiss(animated: true)
-    }
+extension MerchantViewController: TrustlySDKProtocol {
+    func onReturn(_ returnParameters: [AnyHashable : Any]) {
+        lightboxViewController?.dismiss(animated: true)
+        
+        showSuccessAlert()
 
+    }
+    
+    func onCancel(_ returnParameters: [AnyHashable : Any]) {
+        lightboxViewController?.dismiss(animated: true)
+        
+        showFailureAlert()
+
+    }
+    
+    func onBankSelected(data: [AnyHashable: Any]) {
+        print("returnParameters:\(data)")
+        
+        self.establishData = data
+        
+        /* Uncomment this function only if your merchant setup has the "Extended Security" enable in Admin console, and uncomment the code between the lines
+        84-96 */
+//        showSpinner()
+//        self.updateEstablishWithRequestSignature()
+        
+        /* Remove this line, if your merchant setup has the "Extended Security" enable in Admin console */
+        self.openLightbox()
+    }
+    
+    func onExternalUrl(onExternalUrl: TrustlyViewCallback?) {
+        print("onExternalUrl")
+    }
+    
+    func onChangeListener(_ eventName: String, _ eventDetails: [AnyHashable : Any]) {
+        print("eventName: \(eventName), eventDetails: \(eventDetails)")
+    }
+}
+
+
+extension MerchantViewController {
+
+    /* Uncomment this fuction if your merchant setup has the "Extended Security" enable in Admin console,
+       and if did you alredy iimplemented in your backend the generate Request Signature endpoint.
+    */
+//    func updateEstablishWithRequestSignature() {
+//
+//        signatureApi.generateRequestSignatureFor(establishData: self.establishData) { (result) in
+//            do {
+//                try self.establishData["requestSignature"] = result.get()
+//                print("generateRequestSignature - requestSignature: \(String(describing: self.establishData["requestSignature"]))")
+//                
+//                self.showSpinner(false)
+//                
+//                self.openLightbox()
+//
+//            } catch {
+//                print("Error trying to get requestSignature")
+//            }
+//        }
+//    }
 }

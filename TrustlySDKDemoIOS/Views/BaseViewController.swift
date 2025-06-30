@@ -10,6 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    var spinner = UIActivityIndicatorView(style: .medium)
+    
     // MARK: - Alert functions
     private func showAlert(title: String, message: String){
         let dialogMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -30,5 +32,27 @@ class BaseViewController: UIViewController {
     
     func showFailureAlert(){
         self.showAlert(title: "Failure", message: "Failure when to try to process your payment. Try again later")
+    }
+    
+    // MARK: Spinner
+    func showSpinner(_ show: Bool = true) {
+        
+        if show {
+            self.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
+            
+            spinner.color = .white
+            spinner.translatesAutoresizingMaskIntoConstraints = false
+            spinner.startAnimating()
+            
+            self.view.addSubview(spinner)
+            
+            spinner.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            spinner.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+            
+        } else {
+            self.view.backgroundColor = UIColor.systemBackground
+            spinner.removeFromSuperview()
+        }
+
     }
 }

@@ -81,12 +81,11 @@ extension MerchantViewController: TrustlySDKProtocol {
         
         self.establishData = data
         
-        /* Uncomment this function only if your merchant setup has the "Extended Security" enable in Admin console, and uncomment the code between the lines
-        84-96 */
+        /* Uncomment the code between the lines 85 and 86 */
 //        showSpinner()
 //        self.updateEstablishWithRequestSignature()
         
-        /* Remove this line, if your merchant setup has the "Extended Security" enable in Admin console */
+        /* Comment the next line, if your merchant setup has the "Extended Security" enable in Admin console */
         self.openLightbox()
     }
     

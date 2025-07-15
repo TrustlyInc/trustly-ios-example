@@ -4,6 +4,7 @@ import TrustlySDK
 class MerchantViewController: BaseViewController {
 
     @IBOutlet weak var amountTextView: UITextField!
+    @IBOutlet weak var widgetView: UIView!
     
     private let signatureApi = RequestSignatureAPI()
     private var lightboxViewController: LightBoxViewController?
@@ -34,9 +35,8 @@ class MerchantViewController: BaseViewController {
         let widgetVC = WidgetViewController(establishData: establishData)
         widgetVC.delegate = self
 
-        widgetVC.view.frame = CGRect(x: 16, y: 220, width: 350, height: 500)
-        view.addSubview(widgetVC.view)
-
+        widgetVC.view.frame = CGRect(x: 0, y: 0, width: widgetView.frame.width, height: widgetView.frame.height)
+        widgetView.addSubview(widgetVC.view)
     }
 
     override func didReceiveMemoryWarning() {

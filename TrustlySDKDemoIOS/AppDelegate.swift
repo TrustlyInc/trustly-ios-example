@@ -47,8 +47,3 @@ extension AppDelegate {
         return true
     }
 }
-
-extension Notification.Name{
-    static let trustlyCloseWebview = Notification.Name(TrustlyView.trustlyCloseWebview)
-
-}
